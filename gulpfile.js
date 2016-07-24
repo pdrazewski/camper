@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
 
-
-
 gulp.task('nunjucks', function() {
   	return gulp.src(['camper/_src/pages/**/*.+(html|nunjucks)'])
   	.pipe(nunjucksRender({

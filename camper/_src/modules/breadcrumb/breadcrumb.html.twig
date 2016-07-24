@@ -1,0 +1,49 @@
+{% set iconHome = iconHome|default(1) %}
+{% set breadcrumbData = breadcrumbData|default(null) %}
+{% set separator = separator|default('<i class="fa fa-angle-right"></i>') %}
+{% set homepage = homepage|default('<i class="fa fa-home"></i>') %}
+{% set back = back|default('<i class="fa fa-angle-left"></i>') %}
+{% set isSelect = isSelect|default(null) %}
+{% set backOnLastItem = backOnLastItem|default(false) %}
+
+<div class="m-breadcrumb">
+	<ul>
+		{% if iconHome != 0 %}
+		<li class="m-breadcrumb_item">
+			<a href="{{ breadcrumbData.route }}">{{ homepage|safe }}</a>
+			<span class="m-breadcrumb_separator">{{ separator|safe }}</span>
+		</li>
+		{% endif %}
+		{% for data in breadcrumbData %}
+			{% if loop.last != true %}
+				<li class="m-breadcrumb_item {% if loop.revindex == 2 %} m-breadcrumb_preLast{% endif %}">
+					{% if loop.revindex == 2 and backOnLastItem == false %}
+						<span class="m-breadcrumb_back">{{ back|safe }}</span>
+					{% endif %}
+					{% if isSelect %}
+						<a href="/komputery-i-laptopy" class="m-breadcrumb_itemMobile">{{ data.title }}</a>
+						<div class="m-select">
+							<label class="m-select_label">
+								<select class="m-select_custom js-select">
+									{% for subData in data.subData %}
+										<option value="{{ loop.index }}">{{ subData.name }}</option>
+									{% endfor %}
+								</select>
+							</label>
+						</div>
+					{% else %}
+						<a href="{{ data.link }}">{{ data.title }}</a>
+					{% endif %}
+					<span class="m-breadcrumb_separator">{{ separator|safe }}</span>
+				</li>
+			{% else %}
+				<li class="m-breadcrumb_item m-breadcrumb_last">
+					{% if backOnLastItem %}
+						<span class="m-breadcrumb_back">{{ back|safe }}</span>
+					{% endif %}
+					<span>{{ data.title }}</span>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</div>

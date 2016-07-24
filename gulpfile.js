@@ -19,6 +19,7 @@ gulp.task('app', function() {
   	.pipe(nunjucksRender({
 		path: [
 		'camper/_src/templates',
+    'camper/_src/modules',
 		'apps/'+appname+'/_src/templates'
 		]
   	}))

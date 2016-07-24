@@ -1,0 +1,35 @@
+{% set accordionData = [{
+	"title": "Konfiguracja produktu",
+	"accordion_text": "test 1",
+	"template": "offer/show/tabs/offerShowConfig.html.twig",
+	"class": "",
+	"state": 1,
+	"active": 1
+},
+{
+	"title": "Informacje o produkcie",
+	"accordion_text": "test 2",
+	"template": "offer/show/tabs/offerShowDesc.html.twig",
+	"class": "is-printVisable",
+	"state": 1,
+	"active": 0
+},
+{
+	"title": "Opinie o produkcie",
+	"accordion_text": "test 3",
+	"template": "offer/show/tabs/comment-tab.html.twig",
+	"class": "",
+	"state": 1,
+	"active": 0
+}] %}
+
+
+{% include '_modules/accordion/accordion.html.twig'
+	with {
+		"accordionData": accordionData,
+		"accordionTabs": "true",
+		"accordionId": "js-offerTabs_acc",
+		"accordionItem": "js-offerTabs_item",
+		"accordionHeadline": "js-offerTabs_title"
+	}
+%}

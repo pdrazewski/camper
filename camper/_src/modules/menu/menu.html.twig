@@ -1,0 +1,85 @@
+{% set menuData = menuData|default('') %}
+{% set subMenu = subMenu|default('') %}
+{% set obj = obj|default('') %}
+{% set menuId = menuId|default('') %}
+{% set menuHeadline = menuHeadline|default('') %}
+{% set extElement = extElement|default('') %}
+{% set useJs = useJs|default(1) %}
+{% set menuClass = menuClass|default('') %}
+{% set menuListClass = menuListClass|default('') %}
+{% set menuToggle = menuToggle|default(0) %}
+{% set menuToggleAttributes = menuToggleAttributes|default('') %}
+{% set menuToggleHeader = menuToggleHeader|default('') %}
+{% set menuToggleIcon = menuToggleIcon|default(null) %}
+{% set menuProfileId = menuProfileId|default('') %}
+{% set alignVertically = alignVertically|default(false) %}
+{% set verticalAlignColumns = verticalAlignColumns|default(4) %}
+{% set verticalAlignColumnName = verticalAlignColumnName|default('m-menu_column') %}
+{% set adBottom = adBottom|default('') %}
+
+<nav class="m-menu {{menuClass}}" {% if menuId %}id="{{menuId}}"{% endif %}>
+	{% if menuToggle %}
+	<span class="m-menu_toggle" id="js-menuToggle" {{ menuToggleAttributes|raw }}>
+		{{menuToggleHeader|raw}}
+		{% if menuToggleIcon is defined and menuToggleIcon is not null %}
+		<i class="{{menuToggleIcon}}"></i>
+		{% endif %}
+	</span>
+	{% endif %}
+	{{menuHeadline|raw}}
+	{% if menuToggle %}
+		<div id="{{menuProfileId}}" class="m-menu_wrapper">
+	{% endif %}
+
+	{% if alignVertically and menuData|length %}
+		{% set itemsPerColumn = (menuData|length / verticalAlignColumns)|round(0, 'ceil') %}
+	{% else %}
+		<ul class="m-menu_list clearfix2 {{menuListClass}}">
+	{% endif %}
+
+	{% for data in menuData %}
+		{% if alignVertically and (itemsPerColumn == 1 or loop.index % itemsPerColumn == 1) %}
+			<ul class="{{ verticalAlignColumnName }}">
+		{% endif %}
+			<li class="m-menu_item clearfix2 {{data.class}}{% if useJs == 1 %} js-menu_item{% endif %}"{% if data.attributes %} {{ data.attributes|raw }}{% endif %}>
+				{% if data.item %}
+					{% if data.useAsLink|default("true") == "true" %}
+						<a class="m-menu_link {{data.linkClass}}" href="{{data.url}}" {{data.linkAttr|raw}}>
+							{{data.item|raw}}
+							{{data.itemContent|raw}}
+						</a>
+					{% else %}
+						<p class="m-menu_title {{data.titleClass}}">
+							{{data.item|raw}}
+							{{data.itemContent|raw}}
+						</p>
+					{% endif %}
+					{% if subMenu %}
+						{% include ''~ subMenu ~ '' with obj %}
+					{% endif %}
+					{% if data.subMenu %}
+						{{data.subMenu|raw}}
+					{% endif %}
+				{% endif %}
+				{% if data.content %}
+					<div class="m-menu_content js-menu_content js-menu_content{{loop.index}}">
+						{{data.content|raw}}
+					</div>
+				{% endif %}
+				{{extElement|raw}}
+			</li>
+			{% if data.sibling %}
+				{{ data.sibling|raw }}
+			{% endif %}
+		{% if alignVertically and (loop.last or loop.index % itemsPerColumn == 0) %}
+			</ul>
+		{% endif %}
+	{% endfor %}
+	{% if not alignVertically or not menuData|length %}
+		</ul>
+	{% endif %}
+	{% if menuToggle %}
+		</div>
+	{% endif %}
+	{{adBottom|raw}}
+</nav>

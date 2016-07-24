@@ -1,29 +1,38 @@
 var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
 
-gulp.task('nunjucks', function() {
-  	return gulp.src(['camper/_src/pages/**/*.+(html|nunjucks)'])
-  	.pipe(nunjucksRender({
-		path: ['camper/_src/templates']
-  	}))
-  	.pipe(gulp.dest('camper/_dist'))
-});
-
-gulp.task('app', function() {
-	var appname, i = process.argv.indexOf("--is");
-	if(i>-1) {appname = process.argv[i+1]}
-  	return gulp.src([
-  		'camper/_src/pages/**/*.+(html|nunjucks)',
-  		'apps/'+appname+'/_src/pages/**/*.+(html|nunjucks)'
-  		])
-  	.pipe(nunjucksRender({
+// compile
+gulp.task('compile', function() {
+ 	var appname = false;
+ 	i = process.argv.indexOf("--app");
+ 	if(i>-1) {appname = process.argv[i+1]}
+ 		console.log(appname)
+ 	var dest = appname ? 'apps/'+appname+'/_dist' : 'camper/_dist';
+	return gulp.src([
+		'camper/_src/pages/**/*.+(html|nunjucks)',
+		'apps/'+appname+'/_src/pages/**/*.+(html|nunjucks)'
+		])
+	.pipe(nunjucksRender({
 		path: [
 		'camper/_src/templates',
-    'camper/_src/modules',
+		'camper/_src/modules',
 		'apps/'+appname+'/_src/templates'
 		]
-  	}))
-  	.pipe(gulp.dest('apps/'+appname+'/_dist'))
+	}))
+	.pipe(gulp.dest(dest))
+});
+
+// watch for everything
+gulp.task('watch', function() {
+	var appname = false;
+ 	i = process.argv.indexOf("--app");
+ 	if(i>-1) {appname = process.argv[i+1]}
+	var input = [
+	'camper/_src/pages/**/*.+(html|nunjucks)',
+	'apps/'+appname+'/_src/pages/**/*.+(html|nunjucks)'
+	]
+  	return gulp
+    	.watch(input, ['compile'])
 });
 
 //scss
@@ -31,7 +40,7 @@ gulp.task('app', function() {
 //react-babel builds
 //express server
 //contentfull
-//watch + reload
+//reload
 //images sprite + pngmin
 //it8 styles
 //hash for cache images

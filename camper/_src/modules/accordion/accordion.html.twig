@@ -1,0 +1,43 @@
+{% set accordionData = accordionData|default('') %}
+{% set accordionId = accordionId|default('js-m-accordion') %}
+{% set accordionItem = accordionItem|default('js-m-accordion_item') %}
+{% set accordionHeadline = accordionHeadline|default('js-m-accordion_title') %}
+{% set accordionIcon = accordionIcon|default(null) %}
+{% set accordionTabs = accordionTabs|default(false) %}
+{% if accordionTabs == true %}
+	<ul class="m-typo_list js-accordionNav">
+		{% for data in accordionData %}
+			{% if data.state %}
+				<li data-targe="#tab{{loop.index}}" {% if data.active == true %}class="is-active"{% endif %}>{{data.title}}</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+{% endif %}
+<div class="m-accordion" id="{{accordionId}}">
+	{% for data in accordionData %}
+		{% if data.state %}
+		<div class="m-accordion_item {{accordionItem}} {% if data.class is defined %}{{data.class}}{% endif %} {% if data.active == true %} is-active {% endif %}" {% if data.id|length %} id="{{data.id}}"{% endif %}>
+			{% if data.link %}
+				<div class="m-accordion_headline">
+					<a href="{{data.link}}">{{data.link}}</a>
+					<span class="m-accordion_title {{accordionHeadline}}"></span>
+				</div>
+			{% else %}
+				<p class="m-accordion_title {{accordionHeadline}}">
+					{{data.title|raw}}
+					{% if accordionIcon|length %}
+						<i class="{{accordionIcon}}"></i>
+					{% endif %}
+				</p>
+			{% endif %}
+			<div class="m-accordion_content">
+				{% if data.template|length %}
+					{% include data.template %}
+				{% else %}
+					{{data.accordion_text|raw}}
+				{% endif %}
+			</div>
+		</div>
+		{% endif %}
+{% endfor %}
+</div>

@@ -24,3 +24,25 @@ gulp.task('app', function() {
   	}))
   	.pipe(gulp.dest('apps/'+appname+'/_dist'))
 });
+
+//scss
+//js hint
+//react-babel builds
+//express server
+//contentfull
+//watch + reload
+//images sprite + pngmin
+//it8 styles
+//hash for cache images
+//minify html
+//ui
+//menu dla stron
+//errors nunjucks
+//docs
+//tests
+//autoprefixer
+//fixindent 
+//jasmine
+//stylize
+//uglify
+//scss-to-json

@@ -1,0 +1,13 @@
+**/.sass-cache/
+**/node_modules/
+**/psd/
+**/*.psd
+psd
+/www/shop/urwis/psd
+/www/shop/kakto/Develnodejsnpm-cache
+/www/shop/agata/*.psb
+*.orig
+npm-debug.log
+.tmp/
+**/.vscode/
+.idea

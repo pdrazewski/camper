@@ -1,1 +1,9 @@
 #campercss
+
+prefixes:
+
+p - for pages (parent selector)
+b - for main structure blocks
+js- for js binding
+m - for modules
+is - for states

@@ -1,12 +1,14 @@
 var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
-// compile
+
+// compile htmls
 gulp.task('compile', function() {
  	var appname = false;
  	i = process.argv.indexOf("--app");
  	if(i>-1) {appname = process.argv[i+1]}
- 		console.log(appname)
  	var dest = appname ? 'apps/'+appname+'/_dist' : 'camper/_dist';
 	return gulp.src([
 		'camper/_src/pages/**/*.+(html|nunjucks)',
@@ -20,6 +22,30 @@ gulp.task('compile', function() {
 		]
 	}))
 	.pipe(gulp.dest(dest))
+});
+
+
+// compile sass
+gulp.task('sass', function () {
+	var appname = false;
+ 	i = process.argv.indexOf("--app");
+ 	if(i>-1) {appname = process.argv[i+1]}
+ 	var dest = appname ? 'apps/'+appname+'/_dist/common/css/' : 'camper/_dist/common/css/';
+ 	var input;
+ 	if (appname) {
+ 		input = ['apps/'+appname+'/_src/_common/css/**/*.scss','apps/'+appname+'/_src/_common/css/*.scss']
+ 	} else {
+ 		input = ['camper/_src/_common/css/**/*.scss','camper/_src/_common/css/*.scss']
+ 	}
+	return gulp
+	   	.src(input)
+	   	.pipe(sass({
+		  errLogToConsole: true,
+		  outputStyle: 'compressed'
+		}).on('error', sass.logError))
+	    .pipe(autoprefixer())
+	    .pipe(gulp.dest(dest))
+	    .resume()
 });
 
 // watch for everything

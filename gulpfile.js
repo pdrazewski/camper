@@ -66,7 +66,7 @@ gulp.task('watch', function() {
     gulp.watch(dest+"/common/css/style.css").on('change', browserSync.reload);
 });
 
-
+// default, starts with gulp command
 gulp.task('default', ['browser-sync','watch']);
 
 

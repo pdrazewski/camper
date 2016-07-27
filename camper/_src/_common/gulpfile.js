@@ -1,5 +1,5 @@
 // tasks
-var camperSetup = require('./camperHelpers.js');
+var camperSetup = require('gulp');
 var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
 var sass = require('gulp-sass');
@@ -7,7 +7,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var bulkSass = require('gulp-sass-bulk-import');
 var clean = require('gulp-clean');
 
-// compile htmls using nunjucks
+// compile htmls
 gulp.task('compile', function() {
  	var appname = camperSetup.appHelper();
  	var dest = appname ? 'apps/'+appname+'/_dist' : 'camper/_dist';
@@ -22,7 +22,7 @@ gulp.task('compile', function() {
 	.pipe(gulp.dest(dest))
 });
 
-// compile sass using gulp-sass and bulk-sass
+// compile sass
 gulp.task('sass', function () {
 	var appname = camperSetup.appHelper();
  	var dest = appname ? 'apps/'+appname+'/_dist/common/css/' : 'camper/_dist/common/css/';
@@ -49,45 +49,23 @@ gulp.task('watch', function() {
 });
 
 
-
-
-
-// # env
-// express server + reload? + browsersync
-// contentfull
-// errors nunjucks
-// menu dla stron
-// docs
-// ui
-// minify html
-// page-speed?
-
-// #js
-// js hint
-// react-babel builds
-// tests
-// jasmine
-// uglify
-
-
-// #css
-// google fonts?
-// typekit?
-// images sprite + pngmin
-// ie8 styles''
-// hash for cache images
-// fixindent 
-// stylize
-// scss-to-json
-
-
-
-
-
-
-
-
-
-
-
-
+//js hint
+//react-babel builds
+//express server
+//contentfull
+//reload
+//images sprite + pngmin
+//it8 styles
+//hash for cache images
+//minify html
+//ui
+//menu dla stron
+//errors nunjucks
+//docs
+//tests
+//autoprefixer
+//fixindent 
+//jasmine
+//stylize
+//uglify
+//scss-to-json

@@ -1,0 +1,17 @@
+ @import "_vars/*.scss";
+ @import "_defaults/*.scss";
+ body {
+	font-size: 12px;
+	font-family: Arial;
+	line-height: 18px;
+	a {
+		font-size: 12px;
+		text-decoration: none; 
+	}  
+}
+@import "modules/*.scss";  
+@import "blocks/*.scss"; 
+.b-mainContent { 
+	max-width: 1200px;
+	margin: 0 auto;
+}    

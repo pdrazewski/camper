@@ -103,6 +103,7 @@ gulp.task('default', ['browser-sync','watch']);
 // tests
 // jasmine
 // uglify
+// show modules/blocks/pages/js bindings
 
 
 // #css
@@ -113,6 +114,7 @@ gulp.task('default', ['browser-sync','watch']);
 // hash for cache images
 // scss-to-json
 // css uncss
+// gulp clean _dist from .scss files
 
 
 

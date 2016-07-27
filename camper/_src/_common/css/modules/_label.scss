@@ -1,20 +1,16 @@
 
 
 .m-label {
-	@include inline-block;
-	@include border-radius(2px);
-	@include box-shadow(0px 4px 5px rgba(0, 0, 0, 0.1) inset);
-	text-align: center;
-	font-size: 12px;
-	font-weight: 700;
+	text-align: center; 
+	font-size: 12px;   
+	font-weight: 700; 
 	padding: 6px 10px;
 	line-height: 19px;
-	cursor: default;
-	i {
-		margin: 0 2px;
-		color: $cl-white;
-		font-size: 10px;
-	}
+	cursor: default; 
+	i {   
+		margin: 0 2px;  
+		font-size: 10px; 
+	} 
 	&.m-label_primary {
 		background: #337ab7
 	}
@@ -33,7 +29,6 @@
 		line-height: 13px;
 	}
 	&[disabled], &.disabled {
-		@include opacity(.60);
 		cursor: default;
 		pointer-events: none;
 	}

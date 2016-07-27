@@ -1,20 +1,21 @@
-{% set iconHome = iconHome|default(1) %}
-{% set breadcrumbData = breadcrumbData|default(null) %}
-{% set separator = separator|default('<i class="fa fa-angle-right"></i>') %}
-{% set homepage = homepage|default('<i class="fa fa-home"></i>') %}
-{% set back = back|default('<i class="fa fa-angle-left"></i>') %}
-{% set isSelect = isSelect|default(null) %}
-{% set backOnLastItem = backOnLastItem|default(false) %}
-
+{% macro breadcrumb(
+	iconHome = 0,
+	data, 
+	separator = '<i class="fa fa-angle-right"></i>',
+	homepage = '<i class="fa fa-home"></i>',
+	back = '<i class="fa fa-angle-left"></i>',
+	isSelect = null,
+	backOnLastItem = false
+) %}
 <div class="m-breadcrumb">
 	<ul>
 		{% if iconHome != 0 %}
 		<li class="m-breadcrumb_item">
-			<a href="{{ breadcrumbData.route }}">{{ homepage|safe }}</a>
+			<a href="{{ data.route }}">{{ homepage|safe }}</a>
 			<span class="m-breadcrumb_separator">{{ separator|safe }}</span>
 		</li>
 		{% endif %}
-		{% for data in breadcrumbData %}
+		{% for data in data %}
 			{% if loop.last != true %}
 				<li class="m-breadcrumb_item {% if loop.revindex == 2 %} m-breadcrumb_preLast{% endif %}">
 					{% if loop.revindex == 2 and backOnLastItem == false %}
@@ -47,3 +48,6 @@
 		{% endfor %}
 	</ul>
 </div>
+{% endmacro %}
+
+

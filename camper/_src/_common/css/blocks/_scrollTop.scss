@@ -1,0 +1,33 @@
+.b-scrollTop {
+	position: fixed;
+	right: 20px;
+	bottom: 40px;
+	z-index: 2;
+	padding-bottom: 4px;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+	@include bp(tablet) {
+		display: none !important;
+	}
+	&:before {
+		position: absolute;
+		top: 100%; 
+		right: 15px;
+		left: 0;
+		height: 2px;
+		content: '';
+	}
+	i {
+		display: inline-block;
+		height: 0;
+		border-style: solid;
+		border-width: 0 6px 7px;
+		width: 0;
+	}
+	&.is-active {
+		opacity: 1;
+	}
+}

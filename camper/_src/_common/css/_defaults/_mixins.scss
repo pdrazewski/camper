@@ -1,0 +1,343 @@
+/* _mixins2.0
+========================================================================== */
+
+@mixin spriteAtoms($pos_t, $pos_l) {
+	background: url(../images/sprite.png) $pos_t + px $pos_l + px no-repeat;
+}
+
+@mixin centered($width) {
+	margin: 0 auto;
+	width: 100%;
+	max-width: $width;
+}
+
+/*
+* Mixin for basic CSS triangles
+*/
+@mixin triangle($direction:up, $color:#000, $size:100px) {
+	@if($direction == up) {
+		border-color: transparent transparent $color;
+		border-style: solid;
+		border-width: 0 $size $size;
+		height: 0;
+		width: 0;
+	}
+	@if($direction == up2) {
+		border-color: transparent transparent $color;
+		border-style: solid;
+		border-width: $size;
+		height: 0;
+		width: 0;
+	}
+	@if($direction == down) {
+		border-color: $color transparent transparent transparent;
+		border-style: solid;
+		border-width: $size;
+		height:0;
+		width:0;
+	}
+	@if($direction == left) {
+		border-color: transparent $color transparent transparent;
+		border-style: solid;
+		border-width: $size $size $size 0;
+		height: 0;
+		width: 0;
+	}
+	@if($direction == right) {
+		border-color: transparent transparent transparent $color;
+		border-style: solid;
+		border-width: $size 0 $size $size;
+		height:0;
+		width:0;
+	}
+}
+
+
+@mixin border-opacity($color, $opacity) {
+	$opacity: $opacity / 100;
+
+	// Unsupporting browsers get this
+	border-color: $color;
+
+	// Browsers that support RGBA will get this instead
+	border-color: rgba($color, $opacity);
+
+	// Prevent the element's background from reaching the edge of the border
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+}
+
+
+$rwd: true;
+
+$break_point1: if($rwd, 320px, 1px);
+$break_point2: if($rwd, 480px, 1px);
+$break_point3: if($rwd, 640px, 1px);
+$break_point4: if($rwd, 768px, 1px);
+$break_point5: if($rwd, 980px, 1px);
+$break_point6: if($rwd, 1024px, 1px);
+$break_point7: if($rwd, 1200px, 1px);
+$break_point8: if($rwd, 1370px, 1px);
+
+@mixin bp($name) {
+	@if $name == "phone_small" {
+		@media screen and (min-width: $break_point1) {
+			@content;
+		}
+	}
+	@else if $name == "phone" {
+		@media screen and (min-width: $break_point2) {
+			@content;
+		}
+	}
+	@else if $name == "phone_big" {
+		@media screen and (min-width: $break_point3) {
+			@content;
+		}
+	}
+	@else if $name == "tablet" {
+		@media screen and (min-width: $break_point4) {
+			@content;
+		}
+	}
+	@else if $name == "tablet_big" {
+		@media screen and (min-width: $break_point5) {
+			@content;
+		}
+	}
+	@else if $name == "desktop_small" {
+		@media screen and (min-width: $break_point6) {
+			@content;
+		}
+	}
+	@else if $name == "desktop" {
+		@media screen and (min-width: $break_point7) {
+			@content;
+		}
+	}
+	@else if $name == "desktop_big" {
+		@media screen and (min-width: $break_point8) {
+			@content;
+		}
+	}
+	@else {
+		@media screen and (min-width: $name) {
+			@content;
+		}
+	}
+}
+
+@mixin display-flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex:  $values;
+	-webkit-flex:  $values;
+	-ms-flex:  $values;
+	flex:  $values;
+}
+@mixin order($val) {
+	-webkit-box-ordinal-group: $val;
+	-moz-box-ordinal-group: $val;
+	-ms-flex-order: $val;
+	-webkit-order: $val;
+	order: $val;
+}
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+@mixin align-self($value: auto) {
+	// No Webkit Box Fallback.
+	-webkit-align-self: $value;
+	-moz-align-self: $value;
+	@if $value == flex-start {
+		-ms-flex-item-align: start;
+	} @else if $value == flex-end {
+		-ms-flex-item-align: end;
+	} @else {
+		-ms-flex-item-align: $value;
+	}
+	align-self: $value;
+}
+@mixin opacity($args...) {
+	-webkit-opacity: $args;
+	-moz-opacity: $args;
+	-ms-opacity: $args;
+	-o-opacity: $args;
+	opacity: $args;
+}
+@mixin border-radius($args...) {
+	-webkit-border-radius: $args;
+	-moz-border-radius: $args;
+	-ms-border-radius: $args;
+	-o-border-radius: $args;
+	border-radius: $args;
+}
+
+@mixin transform($args...) {
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	-o-transform: $args;
+	transform: $args;
+}
+
+@mixin transition($args...) {
+    -moz-transition : $args;
+    -o-transition : $args;
+    transition : $args;
+}
+
+@mixin inline-block {
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1;
+}
+
+@mixin box-sizing($args...) {
+	-webkit-box-sizing: $args;
+	-moz-box-sizing: $args;
+	-ms-box-sizing: $args;
+	-o-box-sizing: $args;
+	box-sizing: $args;
+}
+
+@mixin box-shadow($args...) {
+	-webkit-box-shadow: $args;
+	-moz-box-shadow: $args;
+	-ms-box-shadow: $args;
+	-o-box-shadow: $args;
+	box-shadow: $args;
+}
+
+@mixin rotate($args...) {
+	-ms-transform: rotate($args);
+	-webkit-transform: rotate($args);
+	transform: rotate($args);
+}
+
+@mixin rotate($args...) {
+	-ms-transform: rotate($args);
+	-webkit-transform: rotate($args);
+	transform: rotate($args);
+}
+@mixin translate($args...) {
+	-ms-transform: translate($args);
+	-webkit-transform: translate($args);
+	transform: translate($args);
+}
+@mixin scale($args...) {
+	-webkit-transform:scale($args);
+	transform:scale($args);
+}
+@mixin transform3d($trans) {
+  @include transform($trans);
+}
+
+// The default angle for rotations
+$default-rotate      : 45deg                 !default;
+// A longcut for 'rotate' in case you forget that 'z' is implied
+//
+// **Note** This mixin cannot be combined with other transform mixins.
+@mixin rotateZ(
+  $rotate:      $default-rotate,
+  $perspective: false,
+  $only3d:      false
+) {
+  @include rotate($rotate, $perspective, $only3d);
+}
+
+// Rotate an object around the x axis (3D)
+// @include rotateX( [ rotation, perspective ] )
+//
+// **Note** This mixin cannot be combined with other transform mixins.
+@mixin rotateX(
+  $rotate: $default-rotate,
+  $perspective: false
+) {
+  $trans: rotateX($rotate);
+  @if $perspective { $trans: perspective($perspective) $trans; }
+  @include transform3d($trans);
+}
+
+// Rotate an object around the y axis (3D)
+// @include rotate( [ rotation, perspective ] )
+//
+// **Note** This mixin cannot be combined with other transform mixins.
+@mixin rotateY(
+  $rotate: $default-rotate,
+  $perspective: false
+) {
+  $trans: rotateY($rotate);
+  @if $perspective { $trans: perspective($perspective) $trans; }
+  @include transform3d($trans);
+}

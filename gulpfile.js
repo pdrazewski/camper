@@ -40,6 +40,7 @@ gulp.task('sass', function () {
  	}
 	return gulp
 	   	.src(input)
+	   	.pipe(bulkSass())
 	   	.pipe(sass({
 		  errLogToConsole: true,
 		  outputStyle: 'compressed'
@@ -48,29 +49,6 @@ gulp.task('sass', function () {
 	    .pipe(gulp.dest(dest))
 	    .resume()
 });
-
-
-gulp.task('sass-multi-import', function() {
-	var appname = false;
- 	i = process.argv.indexOf("--app");
- 	if(i>-1) {appname = process.argv[i+1]}
- 	var dest = appname ? 'apps/'+appname+'/_dist/common/css/' : 'camper/_dist/common/css/';
- 	var input;
- 	if (appname) {
- 		input = ['apps/'+appname+'/_src/_common/css/assets.scss']
- 		output = 'apps/'+appname+'/_src/_common/css/_imports.scss'
- 	} else {
- 		input = ['camper/_src/_common/css/assets.scss']
- 		output = 'camper/_src/_common/css/_imports.scss'
- 	}
- 	console.log(input, output)
-   return gulp
-    .src(input)
-    .pipe(bulkSass())
-    .pipe(clean(output))
-    .pipe(gulp.dest(output) );
-});
-
 
 // watch for everything
 gulp.task('watch', function() {
@@ -87,7 +65,7 @@ gulp.task('watch', function() {
  		inputCSS = ['camper/_src/_common/css/**/*.scss','camper/_src/_common/css/*.scss']
  	}
   	gulp.watch(inputHTML, ['compile']);
-    gulp.watch(inputCSS, ['sass-multi-import','sass']);
+    gulp.watch(inputCSS, ['sass']);
 });
 
 

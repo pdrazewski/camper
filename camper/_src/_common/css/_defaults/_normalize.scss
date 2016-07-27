@@ -5,6 +5,7 @@ Reset / Utility classes
 Reset based on html5 boilerplate and normalize.css
 
 */
+
 /**
  ### 1. html
 <code>
@@ -19,6 +20,7 @@ Reset based on html5 boilerplate and normalize.css
 </code>
 
 */
+
 html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
@@ -27,6 +29,7 @@ html {
 	-webkit-font-smoothing: antialiased;
 	height: 100%;
 }
+
 /**
  ### 2. body
 <code>
@@ -37,10 +40,12 @@ html {
 </code>
 
 */
+
 body {
 	margin: 0;
 	height: 100%;
 }
+
 /**
  ### 3. all elements
 <code>
@@ -51,10 +56,12 @@ body {
 </code>
 
 */
+
 * {
 	margin: 0;
 	padding: 0;
 }
+
 /**
  ### 4. Reset global (based on eric mayer reset)
 <code>
@@ -114,49 +121,50 @@ body {
 </code>
 
 */
-a,
-abbr,
-acronym,
-address,
-blockquote,
+
+html,
 body,
-caption,
-code,
-dd,
-del,
-dfn,
 div,
-dl,
-dt,
-em,
-fieldset,
-form,
+span,
+object,
+iframe,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-html,
-iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+code,
+del,
+dfn,
+em,
 img,
+q,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
 label,
 legend,
-li,
-object,
-ol,
-p,
-pre,
-q,
-span,
 table,
+caption,
 tbody,
-td,
 tfoot,
-th,
 thead,
 tr,
-ul {
+th,
+td {
 	border: 0;
 	font-family: inherit;
 	font-size: 100%;
@@ -167,6 +175,7 @@ ul {
 	padding: 0;
 	outline: 0;
 }
+
 /**
  ### 5. HTML5 display definitions
  Correct `block` display not defined for any HTML5 element in IE 8/9. <br>
@@ -192,6 +201,7 @@ ul {
 </code>
 
 */
+
 article,
 aside,
 details,
@@ -207,6 +217,7 @@ section,
 summary {
 	display: block;
 }
+
 /**
  ### 6. inline-block
  Correct `inline-block` display not defined in IE 8/9. <br>
@@ -223,6 +234,7 @@ summary {
 </code>
 
 */
+
 audio,
 canvas,
 progress,
@@ -230,6 +242,8 @@ video {
 	display: inline-block;
 	vertical-align: baseline;
 }
+
+
 /**
  ### 7. audio element
  Prevent modern browsers from displaying `audio` without controls. <br>
@@ -243,10 +257,12 @@ video {
 </code>
 
 */
+
 audio:not([controls]) {
 	display: none;
 	height: 0;
 }
+
 /**
  ### 8. hidden
  Address `[hidden]` styling not present in IE 8/9/10. <br>
@@ -260,10 +276,12 @@ audio:not([controls]) {
 </code>
 
 */
+
 [hidden],
 template {
 	display: none;
 }
+
 /**
  ### 9. links
  Remove the gray background color from active links in IE 10. <br>
@@ -280,13 +298,17 @@ template {
 </code>
 
 */
+
 a {
 	background: transparent;
 }
+
 a:active,
 a:hover {
 	outline: 0;
 }
+
+
 /**
  ### 10. Text-level semantics
  - abbr[title] / Address styling not present in IE 8/9/10/11, Safari, and Chrome. <br>
@@ -329,6 +351,7 @@ a:hover {
 	}
 </code>
 */
+
 /**
  ### 11. images
  Remove border when inside `a` element in IE 8/9/10.
@@ -339,9 +362,11 @@ a:hover {
 	}
 </code>
 */
+
 img {
 	border: 0;
 }
+
 /**
  ### 12. svg
  Correct overflow not hidden in IE 9/10/11.
@@ -352,9 +377,11 @@ img {
 	}
 </code>
 */
+
 svg:not(:root) {
 	overflow: hidden;
 }
+
 /**
  ### 13. Grouping content
  - hr / Address differences between Firefox and other browsers. <br>
@@ -380,14 +407,17 @@ svg:not(:root) {
 	}
 </code>
 */
+
 hr {
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	height: 0;
 }
+
 pre {
 	overflow: auto;
 }
+
 code,
 kbd,
 pre,
@@ -395,6 +425,7 @@ samp {
 	font-family: monospace, monospace;
 	font-size: 1em;
 }
+
 /**
  ### 14. Forms
  Known limitation: by default, Chrome and Safari on OS X allow very limited
@@ -434,6 +465,7 @@ samp {
 	}
 </code>
 */
+
 button,
 input,
 optgroup,
@@ -443,13 +475,16 @@ textarea {
 	font: inherit;
 	margin: 0;
 }
+
 button {
 	overflow: visible;
 }
+
 button,
 select {
 	text-transform: none;
 }
+
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.
@@ -457,52 +492,58 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-button, html input[type="button"],
-/* 1 */
+
+ button,
+html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
-	-webkit-appearance: button;
-	/* 2 */
-	cursor: pointer;
-	/* 3 */
+	-webkit-appearance: button; /* 2 */
+	cursor: pointer; /* 3 */
 }
-.pointer,
+
 a[href],
-button,
-input[type='image'],
 input[type='submit'],
+input[type='image'],
 label[for],
-select {
+select,
+button,
+.pointer {
 	cursor: pointer;
 }
+
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled],
-input[disabled],
-input[readonly],
-select[disabled],
-select[readonly],
-textarea[disabled],
-textarea[readonly] {
-	cursor: default;
-}
+ button[disabled],
+ input[disabled],
+ select[disabled],
+ textarea[disabled],
+ input[readonly],
+ select[readonly],
+ textarea[readonly] {
+ 	cursor: default;
+ }
+
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
+
+ button::-moz-focus-inner,
+ input::-moz-focus-inner {
+ 	border: 0;
+ 	padding: 0;
+ }
+
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-input {
-	line-height: normal;
-	font-family: Arial,sans-serif;
-}
+
+ input {
+ 	line-height: normal;
+ 	font-family: Arial,sans-serif;
+ }
+
 /**
  * It's recommended that you don't attempt to style these elements.
  * Firefox's implementation doesn't respect box-sizing, padding, or width.
@@ -510,120 +551,145 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"],
-input[type="radio"] {
-	box-sizing: border-box;
-	/* 1 */
-	padding: 0;
-	/* 2 */
+
+ input[type="checkbox"],
+ input[type="radio"] {
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
 }
+
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
+
+ input[type="number"]::-webkit-inner-spin-button,
+ input[type="number"]::-webkit-outer-spin-button {
+ 	height: auto;
+ }
+
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-input[type="search"] {
-	-webkit-appearance: textfield;
-	/* 1 */
+
+ input[type="search"] {
+	-webkit-appearance: textfield; /* 1 */
 	-moz-box-sizing: content-box;
-	-webkit-box-sizing: content-box;
-	/* 2 */
+	-webkit-box-sizing: content-box; /* 2 */
 	box-sizing: content-box;
 }
+
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
+
+ input[type="search"]::-webkit-search-cancel-button,
+ input[type="search"]::-webkit-search-decoration {
+ 	-webkit-appearance: none;
+ }
+
 /**
  * Define consistent border, margin, and padding.
  */
-fieldset {
-	border: 1px solid #c0c0c0;
-	margin: 0 2px;
-	padding: 0.35em 0.625em 0.75em;
-}
+
+ fieldset {
+ 	border: 1px solid #c0c0c0;
+ 	margin: 0 2px;
+ 	padding: 0.35em 0.625em 0.75em;
+ }
+
 /**
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-legend {
-	border: 0;
-	/* 1 */
-	padding: 0;
-	/* 2 */
+
+ legend {
+	border: 0; /* 1 */
+	padding: 0; /* 2 */
 }
+
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-textarea {
-	overflow: auto;
-}
+
+ textarea {
+ 	overflow: auto;
+ }
+
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-optgroup {
-	font-weight: bold;
-}
+
+ optgroup {
+ 	font-weight: bold;
+ }
+
 /* Tables
 	 ========================================================================== */
+
 /**
  * Remove most spacing between table cells.
  */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-td,
-th {
-	padding: 0;
-}
+
+ table {
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ }
+
+ td,
+ th {
+ 	padding: 0;
+ }
+
+
+
 /* Custom ENP declarations for links and images
 ========================================================================== */
+
+
 a b {
 	font-weight: bold;
 }
 a:hover {
-	text-decoration: underline;
+	text-decoration: underline
 }
 img {
 	max-width: 100%;
 	height: auto;
 	border-width: 0;
 	vertical-align: middle;
-	-ms-interpolation-mode: bicubic;
-	/*IE better img render*/
+	-ms-interpolation-mode: bicubic; /*IE better img render*/
 }
 .ie8 img {
 	width: auto;
 }
+
+
+
 /**********************************************************************************************
  *
  * START Default classes
  *
 ***********************************************************************************************/
+
+
 /*clearfix - classic*/
+
 .clearfix {
 	clear: both;
 	overflow: hidden;
 }
+
 /*clearfix - without overflow hidden*/
-.clearfix2:after,
-.clearfix2:before {
+
+.clearfix2:before,
+.clearfix2:after {
 	content: "";
 	display: table;
 	height: 0;
@@ -634,15 +700,22 @@ img {
 .clearfix2 {
 	*zoom: 1;
 }
+
+
 /* declaration: lsn - list style none*/
+
 .g-lsn {
 	list-style: none;
 }
+
 /* declaration: debug - add red border to element*/
+
 .g-debug {
-	border: 1px solid red;
+	border:1px solid red;
 }
+
 /* declaration: fl - float, r-right; l-left; n-none*/
+
 .g-flr {
 	float: right !important;
 }
@@ -652,7 +725,9 @@ img {
 .g-fln {
 	float: none !important;
 }
+
 /* declaration: pos - position, a - absolute; r-relative; s - static; f - fixed*/
+
 .g-posa {
 	position: absolute;
 }
@@ -663,29 +738,36 @@ img {
 	position: static;
 }
 .g-posf {
-	position: fixed;
+	position: fixed
 }
+
 /* declaration: d - display, n - none; b - block*/
+
 .g-dn {
 	display: none;
 }
 .g-db {
 	display: block;
 }
+
 .g-dni {
 	display: none !important;
 }
 .g-dbi {
 	display: block !important;
 }
+
 /* declaration: v - visibility, a - absolute; r-relative; s - static; f - fixed*/
+
 .g-vh {
 	visibility: hidden;
 }
 .g-vv {
 	visibility: visible;
 }
+
 /* declaration: ta - text-align*/
+
 .g-tac {
 	text-align: center;
 }
@@ -698,8 +780,10 @@ img {
 .g-taj {
 	text-align: justify;
 }
+
 /* declaration: fs - font-size */
-.g-fs9 {
+
+.g-fs9  {
 	font-size: 9px;
 	line-height: 12px;
 }
@@ -747,65 +831,69 @@ img {
 	font-size: 20px;
 	line-height: 26px;
 }
+
 /* declaration: b - border */
+
 .g-b0 {
-	border: 0 !important;
+	border: 0px !important
 }
 .g-bl0 {
-	border-left: 0 !important;
+	border-left: 0px !important
 }
 .g-br0 {
-	border-right: 0 !important;
+	border-right: 0px !important
 }
 .g-bb0 {
-	border-bottom: 0 !important;
+	border-bottom: 0px !important
 }
 .g-bt0 {
-	border-top: 0 !important;
+	border-top: 0px !important
 }
+
 /* declaration: m - margin, a - auto*/
+
 .g-ma {
-	margin: 0 auto !important;
-	float: none !important;
+	margin:  0 auto !important;
+	float: none !important
 }
 .g-m0 {
-	margin: 0 !important;
+	margin: 0px !important
 }
 .g-ml0 {
-	margin-left: 0 !important;
+	margin-left: 0px !important
 }
 .g-mr0 {
-	margin-right: 0 !important;
+	margin-right: 0px !important
 }
 .g-mb0 {
-	margin-bottom: 0 !important;
+	margin-bottom: 0px !important
 }
 .g-mt0 {
-	margin-top: 0 !important;
+	margin-top: 0px !important
 }
 .g-m5 {
 	margin: 5px !important;
 }
 .g-m10 {
-	margin: 10px !important;
+	margin: 10px !important
 }
 .g-m15 {
 	margin: 15px !important;
 }
 .g-m20 {
-	margin: 20px !important;
+	margin: 20px !important
 }
 .g-m25 {
 	margin: 25px !important;
 }
 .g-m30 {
-	margin: 30px !important;
+	margin: 30px !important
 }
 .g-m40 {
-	margin: 40px !important;
+	margin: 40px !important
 }
 .g-m50 {
-	margin: 50px !important;
+	margin: 50px !important
 }
 .g-m60 {
 	margin: 60px !important;
@@ -819,30 +907,32 @@ img {
 .g-m120 {
 	margin: 120px !important;
 }
+
 /* declaration: ml - margin-left */
+
 .g-ml5 {
 	margin-left: 5px !important;
 }
 .g-ml10 {
-	margin-left: 10px !important;
+	margin-left: 10px !important
 }
 .g-ml15 {
 	margin-left: 15px !important;
 }
 .g-ml20 {
-	margin-left: 20px !important;
+	margin-left: 20px !important
 }
 .g-ml25 {
 	margin-left: 25px !important;
 }
 .g-ml30 {
-	margin-left: 30px !important;
+	margin-left: 30px !important
 }
 .g-ml40 {
-	margin-left: 40px !important;
+	margin-left: 40px !important
 }
 .g-ml50 {
-	margin-left: 50px !important;
+	margin-left: 50px !important
 }
 .g-ml60 {
 	margin-left: 60px !important;
@@ -856,30 +946,32 @@ img {
 .g-ml120 {
 	margin-left: 120px !important;
 }
+
 /* declaration: mr - margin-right */
+
 .g-mr5 {
 	margin-right: 5px !important;
 }
 .g-mr10 {
-	margin-right: 10px !important;
+	margin-right: 10px !important
 }
 .g-mr15 {
 	margin-right: 15px !important;
 }
 .g-mr20 {
-	margin-right: 20px !important;
+	margin-right: 20px !important
 }
 .g-mr25 {
 	margin-right: 25px !important;
 }
 .g-mr30 {
-	margin-right: 30px !important;
+	margin-right: 30px !important
 }
 .g-mr40 {
-	margin-right: 40px !important;
+	margin-right: 40px !important
 }
 .g-mr50 {
-	margin-right: 50px !important;
+	margin-right: 50px !important
 }
 .g-mr60 {
 	margin-right: 60px !important;
@@ -893,30 +985,32 @@ img {
 .g-mr120 {
 	margin-right: 120px !important;
 }
+
 /* declaration: mb - margin-bottom */
+
 .g-mb5 {
 	margin-bottom: 5px !important;
 }
 .g-mb10 {
-	margin-bottom: 10px !important;
+	margin-bottom: 10px !important
 }
 .g-mb15 {
 	margin-bottom: 15px !important;
 }
 .g-mb20 {
-	margin-bottom: 20px !important;
+	margin-bottom: 20px !important
 }
 .g-mb25 {
 	margin-bottom: 25px !important;
 }
 .g-mb30 {
-	margin-bottom: 30px !important;
+	margin-bottom: 30px !important
 }
 .g-mb40 {
-	margin-bottom: 40px !important;
+	margin-bottom: 40px !important
 }
 .g-mb50 {
-	margin-bottom: 50px !important;
+	margin-bottom: 50px !important
 }
 .g-mb60 {
 	margin-bottom: 60px !important;
@@ -930,30 +1024,32 @@ img {
 .g-mb120 {
 	margin-bottom: 120px !important;
 }
+
 /* declaration: mt - margin-top */
+
 .g-mt5 {
 	margin-top: 5px !important;
 }
 .g-mt10 {
-	margin-top: 10px !important;
+	margin-top: 10px !important
 }
 .g-mt15 {
 	margin-top: 15px !important;
 }
 .g-mt20 {
-	margin-top: 20px !important;
+	margin-top: 20px !important
 }
 .g-mt25 {
 	margin-top: 25px !important;
 }
 .g-mt30 {
-	margin-top: 30px !important;
+	margin-top: 30px !important
 }
 .g-mt40 {
-	margin-top: 40px !important;
+	margin-top: 40px !important
 }
 .g-mt50 {
-	margin-top: 50px !important;
+	margin-top: 50px !important
 }
 .g-mt60 {
 	margin-top: 60px !important;
@@ -967,45 +1063,47 @@ img {
 .g-mt120 {
 	margin-top: 120px !important;
 }
+
 /* declaration: p - padding*/
+
 .g-p0 {
-	padding: 0 !important;
+	padding: 0px !important
 }
 .g-pl0 {
-	padding-left: 0 !important;
+	padding-left: 0px !important
 }
 .g-pr0 {
-	padding-right: 0 !important;
+	padding-right: 0px !important
 }
 .g-pb0 {
-	padding-bottom: 0 !important;
+	padding-bottom: 0px !important
 }
 .g-pt0 {
-	padding-top: 0 !important;
+	padding-top: 0px !important
 }
 .g-p5 {
 	padding: 5px !important;
 }
 .g-p10 {
-	padding: 10px !important;
+	padding: 10px !important
 }
 .g-p15 {
 	padding: 15px !important;
 }
 .g-p20 {
-	padding: 20px !important;
+	padding: 20px !important
 }
 .g-p25 {
 	padding: 25px !important;
 }
 .g-p30 {
-	padding: 30px !important;
+	padding: 30px !important
 }
 .g-p40 {
-	padding: 40px !important;
+	padding: 40px !important
 }
 .g-p50 {
-	padding: 50px !important;
+	padding: 50px !important
 }
 .g-p60 {
 	padding: 60px !important;
@@ -1019,30 +1117,32 @@ img {
 .g-p120 {
 	padding: 120px !important;
 }
+
 /* declaration: pl - padding-left */
+
 .g-pl5 {
 	padding-left: 5px !important;
 }
 .g-pl10 {
-	padding-left: 10px !important;
+	padding-left: 10px !important
 }
 .g-pl15 {
 	padding-left: 15px !important;
 }
 .g-pl20 {
-	padding-left: 20px !important;
+	padding-left: 20px !important
 }
 .g-pl25 {
 	padding-left: 25px !important;
 }
 .g-pl30 {
-	padding-left: 30px !important;
+	padding-left: 30px !important
 }
 .g-pl40 {
-	padding-left: 40px !important;
+	padding-left: 40px !important
 }
 .g-pl50 {
-	padding-left: 50px !important;
+	padding-left: 50px !important
 }
 .g-pl60 {
 	padding-left: 60px !important;
@@ -1056,30 +1156,32 @@ img {
 .g-pl120 {
 	padding-left: 120px !important;
 }
+
 /* declaration: pr - padding-right */
+
 .g-pr5 {
 	padding-right: 5px !important;
 }
 .g-pr10 {
-	padding-right: 10px !important;
+	padding-right: 10px !important
 }
 .g-pr15 {
 	padding-right: 15px !important;
 }
 .g-pr20 {
-	padding-right: 20px !important;
+	padding-right: 20px !important
 }
 .g-pr25 {
 	padding-right: 25px !important;
 }
 .g-pr30 {
-	padding-right: 30px !important;
+	padding-right: 30px !important
 }
 .g-pr40 {
-	padding-right: 40px !important;
+	padding-right: 40px !important
 }
 .g-pr50 {
-	padding-right: 50px !important;
+	padding-right: 50px !important
 }
 .g-pr60 {
 	padding-right: 60px !important;
@@ -1093,30 +1195,32 @@ img {
 .g-pr120 {
 	padding-right: 120px !important;
 }
+
 /* declaration: pb - padding-bottom */
+
 .g-pb5 {
 	padding-bottom: 5px !important;
 }
 .g-pb10 {
-	padding-bottom: 10px !important;
+	padding-bottom: 10px !important
 }
 .g-pb15 {
 	padding-bottom: 15px !important;
 }
 .g-pb20 {
-	padding-bottom: 20px !important;
+	padding-bottom: 20px !important
 }
 .g-pb25 {
 	padding-bottom: 25px !important;
 }
 .g-pb30 {
-	padding-bottom: 30px !important;
+	padding-bottom: 30px !important
 }
 .g-pb40 {
-	padding-bottom: 40px !important;
+	padding-bottom: 40px !important
 }
 .g-pb50 {
-	padding-bottom: 50px !important;
+	padding-bottom: 50px !important
 }
 .g-pb60 {
 	padding-bottom: 60px !important;
@@ -1130,30 +1234,32 @@ img {
 .g-pb120 {
 	padding-bottom: 120px !important;
 }
+
 /* declaration: pt - padding-top */
+
 .g-pt5 {
 	padding-top: 5px !important;
 }
 .g-pt10 {
-	padding-top: 10px !important;
+	padding-top: 10px !important
 }
 .g-pt15 {
 	padding-top: 15px !important;
 }
 .g-pt20 {
-	padding-top: 20px !important;
+	padding-top: 20px !important
 }
 .g-pt25 {
 	padding-top: 25px !important;
 }
 .g-pt30 {
-	padding-top: 30px !important;
+	padding-top: 30px !important
 }
 .g-pt40 {
-	padding-top: 40px !important;
+	padding-top: 40px !important
 }
 .g-pt50 {
-	padding-top: 50px !important;
+	padding-top: 50px !important
 }
 .g-pt60 {
 	padding-top: 60px !important;
@@ -1167,24 +1273,30 @@ img {
 .g-pt120 {
 	padding-top: 120px !important;
 }
+
 /* declaration: g-radio, g-checkbox  - taken from bootstrap */
-.g-checkbox,
-.g-radio {
-	display: block;
+
+.g-radio,
+.g-checkbox {
+	display:block;
 	min-height: 20px;
 	padding-left: 20px;
 }
-.g-checkbox input[type="checkbox"],
-.g-radio input[type="radio"] {
+
+.g-radio input[type="radio"],
+.g-checkbox input[type="checkbox"] {
 	float: left;
 	margin-left: -20px;
 }
+
 /**********************************************************************************************
  *
  * END Default classes
  *
 ***********************************************************************************************/
+
 /*PRINT*/
+
 @media print {
 	* {
 		/*background: transparent !important;
@@ -1199,47 +1311,17 @@ img {
 	a[href]:after {
 		content: " (" attr(href) ")";
 	}
-	a[href^="#"]:after,
-	a[href^="javascript:"]:after {
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
 		content: "";
 	}
-	img,
-	tr {
+	tr, img {
 		page-break-inside: avoid;
 	}
 	img {
 		max-width: 100% !important;
 	}
+
 	/*p, h2, h3 {orphans: 3; widows: 3}
 	h2, h3 {page-break-after: avoid}*/
-}
-/*healthCheck*/
-.is-healthCheck {
-	/**
- * Outline all bloks
- */
-	[class^="b-"] {
-		outline: 2px solid grey;
-	}
-	/**
- * Outline all modules
- */
-	//[class*="m-"],
-	[class^="m-"] {
-		outline: 2px solid green;
-	} 
-	/**
- * Outline all js
- */
-	[class*=" js-"],
-	[class^="js-"] {
-		outline: 2px solid orange;
-	}
-	/**
- * Outline all old s- classes.
- */
-	[class*=" s-"],
-	[class^="s-"] {
-		outline: 2px solid red;
-	}
 }

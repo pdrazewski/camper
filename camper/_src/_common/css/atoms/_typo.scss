@@ -1,0 +1,145 @@
+.m-typo {
+	font: 400 12px/17px $font-primary;
+	color: $cl-black;
+	&.m-typo_primary {
+		font: 400 24px/30px $font-primary;
+	}
+	&.m-typo_secondary {
+		font: 400 20px/22px $font-primary;
+	}
+	&.m-typo_tertiary {
+		font: 400 12px/16px $font-primary;
+	}
+	&.m-typo_big {
+		font: 600 32px/36px $font-primary;
+	}
+	&.m-typo_small {
+		font: 400 10px/15px $font-primary;
+	}
+	&.m-typo_bold {
+		font-weight: 600;
+	}
+	&.m-typo_ttu {
+		text-transform: uppercase;
+	}
+	&.m-typo_list {
+		padding: 10px 20px 20px 13px;
+		li {
+			padding: 2px 0;
+			font-family: $font-primary;
+			font-size: 13px;
+		}
+	}
+	&[disabled], &.disabled {
+		@include opacity(.60);
+		pointer-events: none;
+		cursor: default;
+	}
+}
+.b-offer_desc {
+	.m-typo_list {
+		padding: 0;
+		margin: 0;
+		font-size: 16px;
+		line-height: 19px;
+		color: #333;
+		list-style: none;
+		background: #f2f2f2;
+		border: 1px solid #ddd;
+		border-bottom: 0;
+		@include breakpoint(tablet_big) {
+			background: 0 0;
+			border: 0;
+		}
+		li {
+			padding: 10px 15px;
+			font-size: 14px;
+			line-height: 24px;
+			border-bottom: 1px solid #ddd;
+			@include breakpoint(tablet_big) {
+				padding: 0;
+				border-bottom: 0;
+			}
+		}
+	}
+}
+.b-offer_header {
+	.m-typo {
+		clear: both;
+	}
+}
+.b-header_top .m-typo_list {
+	float: right;
+	padding: 0;
+	list-style: none;
+	li {
+		float: left;
+		margin-left: 10px;
+	}
+}
+.b-profile {
+	.m-typo_primary {
+		padding: 35px 0 20px;
+		&:nth-child(1) {
+			padding-top: 0;
+		}
+	}
+	.m-typo_tertiary {
+		padding-bottom: 10px;
+	}
+}
+.b-security {
+	.m-typo_primary {
+		padding-bottom: 15px;
+		font-size: 18px;
+		font-weight: bold;
+	}
+}
+.b-cart_security {
+	.m-typo_primary {
+		padding-bottom: 15px;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.m-typo_secondary {
+		padding-top: 15px;
+		font-size: 14px;
+	}
+}
+.b-product_reviews {
+	.m-typo {
+		margin-bottom: 15px;
+	}
+}
+.m-searchOffer_content {
+	.m-typo {
+		min-height: 42px;
+		margin-bottom: 15px;
+		font: 400 17px/42px Arial;
+	}
+}
+.b-preCart {
+	.m-typo {
+		padding: 10px 15px;
+		font-size: 15px;
+		background: $cl-greyE;
+		border-bottom: 1px solid $cl-greyC;
+	}
+}
+.b-preCart_acNav {
+	.m-typo_list {
+		list-style: none;
+		li {
+			cursor: pointer;
+		}
+		.is-active {
+			color: $cl-primary;
+		}
+	}
+}
+.b-offer_listToolbar {
+	.m-typo {
+		width: 100%;
+		margin: 0 0 20px;
+	}
+}

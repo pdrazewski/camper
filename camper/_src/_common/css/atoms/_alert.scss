@@ -1,0 +1,26 @@
+.m-alert {
+	position: relative;
+	padding: 12px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	text-align: center;
+	background: $cl-white;
+	.m-alert_close {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		color: $cl-black;
+		cursor: pointer;
+	}
+	&.m-alert_success {
+	}
+	&.m-alert_error {
+	}
+	&.m-alert_info {
+	}
+	&.m-alert_warning {
+	}
+	&.m-alert_left {
+		text-align: left;
+	}
+}

@@ -8,6 +8,9 @@ var bulkSass = require('gulp-sass-bulk-import');
 var clean = require('gulp-clean');
 var server = require('gulp-express');
 var browserSync = require('browser-sync').create();
+var gulpPostcss = require('gulp-postcss');
+var cssdeclsort = require('css-declaration-sorter');
+
 
 // compile htmls using nunjucks
 gulp.task('compile', function() {
@@ -32,6 +35,7 @@ gulp.task('sass', function () {
  	var input = camperSetup.cssPathHelper(appname);
 	return gulp
 	   	.src(input)
+	   	.pipe(gulpPostcss([cssdeclsort({order: 'smacss'})]))
 	   	.pipe(bulkSass())
 	   	.pipe(sass({
 		  errLogToConsole: true,
@@ -52,6 +56,16 @@ gulp.task('browser-sync', function() {
             baseDir: dest
         }
     });
+});
+
+gulp.task('scss-sort', function () {
+	var appname = camperSetup.appHelper();
+ 	var dest = appname ? 'apps/'+appname+'/_src/_common/css/' : 'camper/_src/_common/css/';
+ 	var input = camperSetup.cssPathHelper(appname);
+	return gulp
+	   	.src(input)
+	   	.pipe(gulpPostcss([cssdeclsort({order: 'smacss'})]))
+	    .pipe(gulp.dest(dest))
 });
 
 // watch for everything
@@ -92,14 +106,13 @@ gulp.task('default', ['browser-sync','watch']);
 
 
 // #css
-// google fonts?
+// google fonts? - https://www.npmjs.com/package/gulp-google-webfonts
 // typekit?
 // images sprite + pngmin
 // ie8 styles''
 // hash for cache images
-// fixindent 
-// stylize
 // scss-to-json
+// css uncss
 
 
 

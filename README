@@ -17,3 +17,30 @@ b - for main structure blocks
 js- for js binding
 m - for modules
 is - for states
+
+### env
+// contentfull
+// errors nunjucks
+// menu dla stron
+// docs
+// ui
+// minify html
+// page-speed?
+
+### js
+// js hint
+// react-babel builds
+// tests
+// jasmine
+// uglify
+// show modules/blocks/pages/js bindings
+
+
+### css
+// google fonts? - https://www.npmjs.com/package/gulp-google-webfonts
+// typekit?
+// images sprite + pngmin
+// ie8 styles''
+// hash for cache images
+// scss-to-json
+// css uncss

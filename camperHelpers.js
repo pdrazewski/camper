@@ -1,5 +1,5 @@
 module.exports = {
-	app: false,
+	app: false, //type your app name
 	appHelper: function() {
 		if (this.app === false) {
 			var appname = false;

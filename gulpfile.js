@@ -6,6 +6,8 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var bulkSass = require('gulp-sass-bulk-import');
 var clean = require('gulp-clean');
+var server = require('gulp-express');
+var browserSync = require('browser-sync').create();
 
 // compile htmls using nunjucks
 gulp.task('compile', function() {
@@ -20,6 +22,7 @@ gulp.task('compile', function() {
 		]
 	}))
 	.pipe(gulp.dest(dest))
+	.pipe(browserSync.stream())
 });
 
 // compile sass using gulp-sass and bulk-sass
@@ -36,7 +39,19 @@ gulp.task('sass', function () {
 		}).on('error', sass.logError))
 	    .pipe(autoprefixer())
 	    .pipe(gulp.dest(dest))
+	    .pipe(browserSync.stream())
 	    .resume()
+});
+
+// Static server
+gulp.task('browser-sync', function() {
+	var appname = camperSetup.appHelper();
+	var dest = appname ? 'apps/'+appname+'/_dist/' : 'camper/_dist/';
+    browserSync.init({
+        server: {
+            baseDir: dest
+        }
+    });
 });
 
 // watch for everything
@@ -44,16 +59,22 @@ gulp.task('watch', function() {
 	var appname = camperSetup.appHelper();
 	var inputHTML = camperSetup.htmlPathHelper(appname);
 	var inputCSS = camperSetup.cssPathHelper(appname);
+	var dest = appname ? 'apps/'+appname+'/_dist/' : 'camper/_dist/';
   	gulp.watch(inputHTML, ['compile']);
     gulp.watch(inputCSS, ['sass']);
+    gulp.watch(dest+"/*.html").on('change', browserSync.reload);
+    gulp.watch(dest+"/common/css/style.css").on('change', browserSync.reload);
 });
+
+
+gulp.task('default', ['browser-sync','watch']);
+
 
 
 
 
 
 // # env
-// express server + reload? + browsersync
 // contentfull
 // errors nunjucks
 // menu dla stron

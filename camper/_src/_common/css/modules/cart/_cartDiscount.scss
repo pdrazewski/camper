@@ -1,0 +1,64 @@
+
+.m-cartDiscount {
+	padding-bottom: 10px;
+	@include breakpoint(tablet) {
+		float: left;
+		width: 60%;
+		padding-bottom: 0;
+	}
+	@include breakpoint(desktop_small) {
+		width: 45%;
+	}
+	i {
+		line-height: 18px;
+		vertical-align: middle;
+	}
+	.m-cartDiscount_info {
+		margin: 10px 0;
+		font-size: 12px;
+	}
+	.m-cartDiscount_form {
+		float: none;
+		width: auto;
+		padding-top: 5px;
+	}
+	.m-cartDiscount_field {
+		margin-bottom: 10px;
+		@include breakpoint(phone_big) {
+			float: left;
+			width: 100%;
+			margin-bottom: 0;
+		}
+		.m-cartDiscount_name {
+			margin-bottom: 10px;
+			font-size: 17px;
+			color: $cl-black;
+			label {
+				padding: 7px 0 13px 0;
+				margin-top: 0;
+			}
+		}
+		.m-cartDiscount_input {
+			float: left;
+			width: 100%;
+			> div {
+				float: left;
+				width: 50%;
+				@include breakpoint(phone_big) {
+					width: 65%;
+				}
+			}
+			input {
+				@include box-sizing(border-box);
+				position: relative;
+				z-index: 100;
+				float: left;
+				width: 100%;
+				height: 37px;
+				padding: 0 10px;
+				line-height: 36px;
+				border: 1px solid $cl-greyC;
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+
+.m-offerVariants {
+	margin: 30px 0 0;
+	.m-offerVariants_list {
+		@include display-flex;
+		@include justify-content(center);
+		text-align: center;
+	}
+	.m-offerVariants_item {
+		@include border-radius(2px);
+		@include transition(all 0.3s);
+		display: inline-block;
+		width: 22px;
+		height: 22px;
+		padding: 1px;
+		margin: 0 1px;
+		cursor: pointer;
+		border: 1px solid transparent;
+		&.is-active {
+			border-color: $cl-greyC;
+		}
+		&:hover {
+			@include opacity(0.7);
+			border-color: $cl-greyC;
+		}
+	}
+	.m-offerVariants_image {
+		@include border-radius(2px);
+	}
+}

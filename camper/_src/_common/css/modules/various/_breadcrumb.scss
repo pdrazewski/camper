@@ -1,0 +1,64 @@
+$rwdbreak: phone_big;
+.m-breadcrumb {
+	padding-bottom: 10px;
+	.m-breadcrumb_item {
+		display: none;
+		list-style: none;
+		@include breakpoint($rwdbreak) {
+			display: inline;
+		}
+	}
+	.m-breadcrumb_back {
+		display: none;
+	}
+	.m-breadcrumb_separator {
+		margin: 0 2px;
+	}
+	.m-breadcrumb_preLast {
+		position: relative;
+		display: block;
+		text-align: center;
+		border: 1px solid #ddd;
+		@include breakpoint($rwdbreak) {
+			display: inline;
+			border: 0;
+		}
+		a {
+			display: block;
+			padding: 10px;
+			text-align: center;
+			@include breakpoint($rwdbreak) {
+				display: inline;
+				padding: 0;
+				text-align: left;
+			}
+		}
+		.m-breadcrumb_back {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			display: block;
+			margin-top: -10px;
+			line-height: 20px;
+			@include breakpoint($rwdbreak) {
+				display: none;
+			}
+		}
+		.m-breadcrumb_separator {
+			display: none;
+			@include breakpoint($rwdbreak) {
+				display: inline;
+			}
+		}
+	}
+	li {
+		display: inline;
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+	span {
+		color: $cl-grey5;
+	}
+}

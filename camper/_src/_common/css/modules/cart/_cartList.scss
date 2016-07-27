@@ -1,0 +1,757 @@
+
+.m-cartList {
+	border-bottom: 2px solid #003375;
+	max-width: 1280px;
+	@include breakpoint(tablet) {
+		border-bottom: 0;
+	}
+	table {
+		width: 100%;
+		thead {
+			display: none;
+			white-space: normal;
+			@include breakpoint(tablet) {
+				display: table-header-group;
+			}
+		};
+		tbody {
+			display: block;
+			white-space: normal;
+			@include breakpoint(tablet) {
+				display: table-row-group;
+			}
+		};
+		th {
+			display: block;
+			white-space: normal;
+			@include breakpoint(tablet) {
+				background: none repeat scroll 0 0 #f7f7f7;
+				border-bottom: 1px solid #d8d8d8;
+				color: #111;
+				display: table-cell;
+				font: 400 12px/18px Arial;
+				padding: 10px 20px 8px 5px;
+				text-transform: none;
+			}
+			&.m-cartList_thItemProduct {
+				text-align: left;
+			}
+			&.m-cartList_thItemRemove {
+				padding-right: 0;
+			}
+		};
+		tr {
+			border: 1px solid #ddd;
+			clear: both;
+			overflow: hidden;
+			display: block;
+			margin: 5px 0 15px;
+			padding: 5px 15px;
+			white-space: normal;
+			position: relative;
+			@include breakpoint(tablet) {
+				display: table-row;
+				border: none;
+				clear: none;
+				padding: 0;
+				position: static;
+			}
+		};
+		td {
+			display: block;
+			white-space: normal;
+			clear: both;
+			width: 75%;
+			text-align: left;
+			float: right;
+			@include breakpoint(tablet) {
+				display: table-cell;
+				clear: none;
+				border-bottom: 1px solid #ddd;
+				vertical-align: top;
+				padding: 12px 5px 10px 5px;
+				width: auto;
+				max-width: 300px;
+				text-align: left;
+				float: none
+			}
+			@include breakpoint(desktop) {
+				padding-right: 10px;
+			}
+			&.m-cartList_itemPhotoBox {
+				left: 0;
+				position: absolute;
+			};
+		}
+		/*
+		helpers
+		*/
+		.m-cartList_tac {
+			@include breakpoint(tablet) {
+				text-align: center;
+			}
+		}
+		/*
+		column one - photo column
+		.m-cartList_itemPhoto
+			.m-cartList_itemPhotoLink
+				img
+		*/
+		.m-cartList_itemPhoto {
+			left: 5px;
+			position: absolute;
+			text-align: center;
+			top: 5px;
+			width: 23%;
+			@include breakpoint(tablet) {
+				position: static;
+				width: auto;
+				padding: 10px 8px 10px 2px;
+				vertical-align: top;
+			}
+			.m-cartList_itemPhotoLink {
+				margin:0 auto;
+				text-align: center;
+				img {
+					width: 60px;
+					@include breakpoint(phone) {
+						width: 100px;
+					}
+					@include breakpoint(tablet) {
+						width: 70px;
+					}
+				}
+			}
+		}
+		/*
+		column two - product column
+		.m-cartList_itemProduct
+			.m-cartList_itemProductBox
+				.m-cartList_itemProductName
+					a
+				.m-cartList_itemOption
+		*/
+		.m-cartList_itemProduct {
+			width: 100%;
+			float: none;
+			clear: both;
+			overflow: hidden;
+			padding-bottom: 10px;
+			min-height: 50px;
+			@include breakpoint(480px) {
+				min-height: 5px;
+			}
+			@include breakpoint(tablet) {
+				width: auto;
+				min-height: auto;
+			}
+			.m-cartList_itemProductBox {
+				max-width: 350px;
+				padding-left: 25%;
+				min-height: 35px;
+				width: 68%;
+				margin-top: 4px;
+				@include breakpoint(380px) {
+					min-height: 45px;
+				}
+				@include breakpoint(480px) {
+					min-height: 5px;
+				}
+				@include breakpoint(tablet) {
+					padding-left: 0;
+					float: left;
+					min-height: auto;
+					margin-top: 0;
+				}
+				.s-productItem_flag {
+					img {
+						width: 20px;
+						@include breakpoint(tablet) {
+							width: auto;
+						}
+					}
+				}
+				.m-cartList_itemProductName {
+					font: 17px/19px $font-quaternary;
+					margin-bottom: 8px;
+					color: $cl-secondary;
+					text-decoration: none;
+					@include breakpoint(480px) {
+						margin-bottom: 4px;
+					}
+					@include breakpoint(tablet) {
+						font: 14px/21px $font-primary;
+					}
+					a {
+						text-decoration: none;
+						color: $cl-secondary;
+						font: 17px/19px $font-quaternary;
+						margin-bottom: 4px;
+						@include breakpoint(tablet) {
+							font: 13px/21px $font-primary;
+						}
+					}
+				}
+			}
+			.m-cartList_itemProductVariants {
+				clear: both;
+				overflow: hidden;
+				padding: 10px 0 0 0;
+				@include breakpoint(480px) {
+					padding: 5px 0 0 25%;
+				}
+				@include breakpoint(phone_big) {
+					padding-left: 25%;
+				}
+				@include breakpoint(tablet) {
+					padding-left: 0;
+					padding-top: 0;
+				}
+			}
+			.m-cartList_itemOption {
+				padding-bottom: 7px;
+				max-width: 150px;
+				.label {
+					padding: 1px 9px;
+					font-size: 11px;
+				}
+				.button:after {
+					top: 3px;
+				}
+			}
+			.m-cartList_itemProductPromo {
+				margin-right: 10px;
+				float: left;
+				padding-left: 25%;
+				@include breakpoint(tablet) {
+					padding-left: 0;
+					padding-bottom: 0;
+					padding-top: 3px;
+					padding-right: 10px;
+				}
+			}
+			.m-cartList_itemAdd {
+				border: 1px solid $cl-greyD;
+				margin-bottom: 5px;
+				@include border-radius(2px);
+				position: relative;
+				@include breakpoint(tablet) {
+					border: 0;
+					@include border-radius(0);
+					padding: 4px 0 0 0;
+					margin-bottom: 0;
+				}
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+				i {
+					position: absolute;
+					right: 7px;
+					top: 11px;
+					@include breakpoint(tablet) {
+						font-size: 10px;
+						position: relative;
+						top: -1px;
+						right: auto;
+					}
+				}
+				.m-cartList_itemAddAction {
+					font-size: 12px;
+					padding: 10px;
+					display: block;
+					color: $cl-grey7;
+					@include breakpoint(tablet) {
+						display: inline;
+						padding: 0;
+						font-size: 11px;
+					}
+				}
+			}
+		}
+		/*
+		column three - availability column
+		.m-cartList_itemAvailability
+			.m-cartList_itemAvailabilityName
+
+		*/
+		.m-cartList_itemAvailability {
+			position: absolute;
+			bottom: 10px;
+			left: 15px;
+			@include breakpoint(480px) {
+				left: 25%;
+				padding-left: 8px;
+			}
+			@include breakpoint(tablet) {
+				position: static;
+			}
+			.m-cartList_itemAvailabilityName {
+				padding-top: 8px;
+				font: 12px/21px $font-primary;
+				color: $cl-secondary;
+				@include breakpoint(tablet) {
+					font: 13px/21px $font-primary;
+				}
+			}
+			.m-cartList_itemAvailabilityDebug {
+				display: none;
+				@include breakpoint(tablet) {
+					display: block;
+				}
+			}
+		}
+		/*
+		column four and six - price column
+		.m-cartList_itemPrice
+			.m-cartList_itemPriceValue
+			.m-cartList_itemPriceOld
+
+		*/
+		.m-cartList_itemPrice {
+			float: left;
+			clear: none;
+			width: auto;
+			padding-bottom: 40px;
+			@include breakpoint(tablet) {
+				float: none;
+				width: auto;
+				padding-bottom: 0;
+			}
+			&.m-cartList_itemProductPrice {
+				padding-right: 10px;
+				@include breakpoint(480px) {
+					padding-left: 25%;
+				}
+				@include breakpoint(tablet) {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+			.m-cartList_itemPriceValue {
+				padding: 2px 0;
+				font-weight: 600;
+				font: 400 13px/14px $font-quaternary;
+				color: $cl-black;
+				margin-top: 10px;
+				@include breakpoint(400px) {
+					font: 400 17px/14px $font-quaternary;
+				}
+				@include breakpoint(tablet) {
+					font: 400 16px/16px $font-primary;
+					margin-top: 8px;
+					color: $cl-grey7;
+				}
+			}
+			.m-cartList_itemPriceOld {
+				font: 400 13px/18px $font-quaternary;
+				color: $cl-grey7;
+				text-transform: uppercase;
+				position: relative;
+				text-decoration: line-through;
+				margin-bottom: -10px;
+				@include breakpoint(tablet) {
+					margin-bottom: -3px;
+					font: 400 13px/18px $font-primary;
+				}
+			}
+			.m-cartList_itemPriceChange {
+				margin-top: 10px;
+				.m-cartList_itemPriceNew {
+					display: block;
+					margin: 5px 0 0 0;
+					border: 1px solid #ddd;
+					height: 25px;
+					width: 100px;
+					line-height: 25px;
+					text-align: center;
+					box-shadow: 0 0 3px rgba(0, 0, 0, 0.2) inset;
+					@include breakpoint(tablet) {
+						margin: 5px auto;
+					}
+				}
+				.m-cartList_itemPriceSave {
+					display: block;
+					margin: 0 0 10px 0;
+					font: 400 11px/21px Arial;
+					text-align: center;
+					cursor: pointer;
+					color: $cl-grey7;
+					&:hover {
+						text-decoration: none;
+					}
+					@include breakpoint(tablet) {
+						margin: 0 auto 5px;
+					}
+				}
+			}
+		}
+		/*
+		column five - quantity column
+		.m-cartList_itemCounter
+			.m-cartList_itemCounterWrapper
+				.m-cartList_itemCounterBox
+					.m-cartList_itemNr
+						.m-cartList_itemChng
+							.m-cartList_itemPlus
+							.m-cartList_itemMinus
+					.m-cartList_itemReload
+
+		*/
+		.m-cartList_itemCounter {
+			float: left;
+			clear: none;
+			width: 115px;
+			@include breakpoint(380px) {
+				width: 133px;
+			}
+			@include breakpoint(tablet) {
+				float: none;
+				width: auto;
+			}
+			&.m-cartList_itemCounterSummation {
+				width: auto;
+				.m-cartList_itemCounterBox {
+					border: 1px solid #e0e0e0;
+					height: 35px;
+					margin: 0 auto;
+					display: block;
+					line-height: 35px;
+					text-align: center;
+					float: left;
+					width: 30px;
+					@include breakpoint(380px) {
+						width: 35px;
+					}
+					@include breakpoint(tablet) {
+						height: 30px;
+						line-height: 30px;
+						width: 55%;
+						float: none;
+						margin: 0 auto;
+						border: none;
+					}
+				}
+			}
+			.m-cartList_itemCounterWrapper {
+				position: relative;
+				@include breakpoint(tablet) {
+					margin: 0 auto;
+					width: 90px;
+				}
+				.m-cartList_itemCounterBox {
+					float: left;
+					margin-right: 10px;
+					@include breakpoint(tablet) {
+						float: none;
+						width: 100%;
+						margin-right: 0;
+					}
+				}
+				.m-cartList_itemNr {
+					border: 1px solid #e0e0e0;
+					height: 35px;
+					margin: 0 auto;
+					display: block;
+					line-height: 35px;
+					text-align: center;
+					float: left;
+					width: 30px;
+					margin-left: 35px;
+					@include breakpoint(380px) {
+						width: 35px;
+						margin-left: 42px;
+					}
+					@include breakpoint(tablet) {
+						height: 30px;
+						line-height: 30px;
+						width: 55%;
+						float: none;
+						margin: 0 auto;
+					}
+				}
+				.m-cartList_itemChng {
+					top: 0;
+					cursor: pointer;
+					font-size: 16px;
+					width: 30px;
+					padding: 0;
+					height: 35px;
+					line-height: 35px;
+					border: 1px solid #ddd;
+					text-align: center;
+					color: $cl-black;
+					position: absolute;
+					&:hover {
+						color: $cl-black;
+					}
+					@include breakpoint(380px) {
+						width: 35px;
+					}
+					@include breakpoint(tablet) {
+						display: block;
+						float: none;
+						background: transparent;
+						margin: 0;
+						width: auto;
+						height: auto;
+						border: 0;
+						top: 5px;
+						color: #003375;
+						font: 400 21px/21px Arial;
+					}
+					&:hover {
+						color: $cl-black;
+					}
+					&.m-cartList_itemPlus {
+						left: 70px;
+						@include breakpoint(380px) {
+							left: 84px;
+						}
+						@include breakpoint(tablet) {
+							right: 0;
+							left: auto;
+						}
+					}
+					&.m-cartList_itemMinus {
+						left: 0;
+					}
+				}
+				.m-cartList_itemReload {
+					text-align: center;
+					padding: 2px 5px;
+					font: 400 11px/21px Arial;
+					cursor: pointer;
+					z-index: 10;
+					display: block;
+					float: left;
+					color: $cl-grey7;
+					@include breakpoint(tablet) {
+						position: absolute;
+						bottom: -25px;
+						left: 0;
+						float: none;
+						right: 0;
+					}
+				}
+			}
+		}
+		/*
+		column seven - remove item column
+
+		.m-cartList_itemRemove
+			.m-cartList_itemRemoveLink
+
+		*/
+		.m-cartList_itemRemove {
+			position: absolute;
+			right: 5px;
+			top: 0;
+			width: auto;
+			padding-left: 0;
+			padding-right: 0;
+			@include breakpoint(tablet) {
+				position: static;
+			}
+			.m-cartList_itemRemoveLink {
+				color: #003375;
+				float: left;
+				font-size: 13px;
+				margin-top: 8px;
+			}
+			.fa {
+				display: none;
+				@include breakpoint(tablet) {
+					display: block;
+				}
+			}
+			.icon-i_close {
+				font-size: 14px;
+				font: $font-primary;
+				color: $cl-black;
+				text-transform: uppercase;
+				&:hover {
+					text-decoration: none;
+				}
+				@include breakpoint(tablet) {
+					display: none;
+				}
+			}
+		}
+		/* specifict rows, additionals etc.
+
+		m-cartList_promoStart
+		m-cartList_promoItem
+		m-cartList_promoEnd
+
+		*/
+		.m-cartList_promoStart {
+			padding: 0;
+			border: 0;
+			td {
+				border: 0;
+				padding: 0;
+				width: 100%;
+				@include breakpoint(tablet) {
+					border-bottom: 1px solid #ddd;
+				}
+			}
+		}
+		.m-cartList_promoItem {
+			padding: 40px 15px 5px 15px;
+			position: relative;
+			@include breakpoint(tablet) {
+				padding: 0;
+				margin-bottom: 0;
+			}
+			td {
+				border: none;
+			}
+			.m-cartList_itemProductBox {
+				margin-top: 0;
+			}
+			.m-cartList_itemPhoto {
+				top: 35px;
+			}
+			.m-cartList_itemRemove {
+				top: 0;
+				@include breakpoint(tablet) {
+					top: auto;
+				}
+				.icon-i_close {
+					font-size: 15px;
+					color: $cl-white;
+					text-transform: uppercase;
+				}
+			}
+		}
+		.m-cartList_promoItemParent {
+			td {
+				@include breakpoint(tablet) {
+					border-bottom: 1px solid #ddd;
+				}
+			}
+		}
+		.m-cartList_promoEnd {
+			display: none;
+			@include breakpoint(tablet) {
+				display: table-row;
+			}
+			td {
+				padding: 0;
+				border-bottom: 1px solid #ddd;
+			}
+		}
+		.m-cartList_serviceRow {
+			td {
+				padding: 0;
+				.b-services {
+					background: none;
+					margin-top: -1px;
+					position: relative;
+					z-index: 100;
+					background: #fff;
+					padding: 0 15px 10px 0;
+				}
+			}
+		}
+		.m-cartList_itemFeatures {
+			margin: 0 0 20px 0;
+			line-height: 18px;
+			list-style: none;
+			li {
+				padding-left: 10px;
+				position: relative;
+				&:before {
+					content:"";
+					width: 4px;
+					height: 4px;
+					background: #df0000;
+					position: absolute;
+					left: 0;
+					top: 7px;
+				}
+			}
+		}
+		.m-cartList_promoFlag {
+			color: $cl-white;
+			display: inline-block;
+			font-size: 14px;
+			font-family: $font-quaternary;
+			text-align: left;
+			text-indent: 15px;
+			text-transform: uppercase;
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			right: 1px;
+			height: 30px;
+			overflow: hidden;
+			line-height: 30px;
+			vertical-align: middle;
+			@include box-sizing(padding-box);
+			@include breakpoint(tablet) {
+				position: relative;
+				top: 0;
+				padding: 5px 0;
+				height: auto;
+				line-height: 14px;
+				text-indent: 0;
+				font-family: $font-primary;
+				left: 0;
+				font-size: 12px;
+				right: auto;
+				margin-right: 5px;
+				padding: 1px 5px;
+				font-size: 10px;
+				@include border-radius(2px);
+			}
+		}
+		.s-cartList_flag_1 {
+			background: #003375;
+		}
+		.s-cartList_flag_2 {
+			background:#303F9F;
+		}
+		.s-cartList_flag_3 {
+			background: #388e3c;
+		}
+		.s-cartList_flag_4 {
+			background: #0057a4;
+		}
+		.s-cartList_flag_5 {
+			background:#7bb000;
+		}
+		.m-cartList_itemSpec {
+			width: 100%;
+		}
+		.m-cartList_featuresHeader {
+			font-size: 15px;
+			color: $cl-black;
+		}
+		.m-cartList_itemFeatures {
+			margin: 10px 0 20px 0;
+			line-height: 18px;
+			list-style: none;
+			li {
+				padding-left: 10px;
+				position: relative;
+				&:before {
+					content:"";
+					width: 4px;
+					height: 4px;
+					background: #df0000;
+					position: absolute;
+					left: 0;
+					top: 7px;
+				}
+			}
+		}
+	}
+	.m-cartList_posItem {
+		td {
+			width: 100%;
+		}
+	}
+}

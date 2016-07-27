@@ -1,0 +1,40 @@
+
+.m-offerCompareBar {
+	@include align-items(center);
+	display: none;
+	height: 90px;
+	background: $cl-white;
+	@include breakpoint(tablet) {
+		@include display-flex;
+		padding: 0 15px;
+	}
+	@include breakpoint(desktop_small) {
+		padding: 0 30px;
+	}
+	.m-offerCompareBar_headline {
+		padding: 0 30px 0 0;
+		font: 500 16px/16px $font-secondary;
+		color: $cl-grey3;
+	}
+	.m-offerCompareBar_item {
+		position: relative;
+		&:not(:last-of-type) {
+			margin-right: 15px;
+		}
+		.m-offerCompareBar_remove {
+			position: absolute;
+			top: -8px;
+			right: -10px;
+			left: inherit;
+			z-index: 10;
+			width: 16px;
+			height: 16px;
+			text-align: center;
+			cursor: pointer;
+			background: $cl-secondary;
+		}
+	}
+	.m-offerCompareBar_action {
+		margin: 0 0 0 auto;
+	}
+}

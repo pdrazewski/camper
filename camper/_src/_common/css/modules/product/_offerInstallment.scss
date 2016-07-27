@@ -1,0 +1,12 @@
+
+.m-offerInstallment {
+    margin: 20px 0;
+    .m-offerInstallment_headline,
+    .m-offerInstallment_value {
+        display: inline-block;
+        font: normal 15px/1 $font-primary, sans-serif;
+        @include breakpoint(tablet) {
+            font-size: 18px;
+        }
+    }
+}

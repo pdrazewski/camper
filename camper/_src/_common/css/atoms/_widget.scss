@@ -1,0 +1,59 @@
+
+.m-widget {
+    margin-bottom: 15px;
+    @include breakpoint(tablet) {
+        border: 1px solid $cl-greyD;
+    }
+    .m-widget_txt {
+        display: none;
+        float: right;
+        @include breakpoint(tablet) {
+            position: relative;
+            z-index: 10;
+            display: block;
+            float: left;
+            padding-left: 15px;
+            overflow: hidden;
+            background: #fff;
+        }
+        span {
+            display: none;
+            @include breakpoint(tablet) {
+                display: inline;
+            }
+        }
+        a {
+            i {
+                font-size: 10px;
+            }
+        }
+    }
+    .m-widget_header {
+        position: relative;
+        padding: 15px 0 15px 0;
+        background: none;
+        border-bottom: 0;
+    }
+    .m-widget_content {
+        padding: 15px;
+    }
+    .m-widget_name {
+        position: relative;
+        z-index: 10;
+        width: auto;
+        padding: 0 15px;
+        overflow: hidden;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        background: #fff;
+        @include breakpoint(phone_big) {
+            float: left;
+        }
+    }
+}
+.b-freewall_pinterest {
+    .m-widget_content {
+        background: $cl-greyE;
+    }
+}

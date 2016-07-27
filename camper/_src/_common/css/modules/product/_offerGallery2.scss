@@ -1,0 +1,96 @@
+
+@import "../_icons";
+
+.m-offerGallery2 {
+	position: relative;
+	figure {
+		text-align: center;
+		@include breakpoint(720px) {
+			text-align: left;
+		}
+	}
+	.m-offerGallery2_th {
+		position: relative;
+		text-align: center;
+		margin: 10px 0 0;
+		overflow: hidden;
+		span {
+			@include inline-block;
+			padding: 2px;
+			cursor: pointer;
+			img {
+				max-width: 100%;
+			}
+			&.active {
+			}
+		}
+	}
+	.s-imgWrap {
+		text-align: center;
+		@include breakpoint(720px) {
+			width: 95%;
+			text-align: left;
+		}
+	}
+	.m-offerGallery2_control {
+		position: absolute;
+		cursor: pointer;
+		top: 50%;
+	}
+	.m-offerGallery2_prev {
+		left: 15px;
+	}
+	.m-offerGallery2_next {
+		right: 15px;
+	}
+	.m-offerGallery2_thumb {
+		display: inline-block;
+		cursor: pointer;
+		margin-left: 4px;
+		width: 23%;
+		@include breakpoint(480px) {
+			margin-left: 6px;
+			width: 23%;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+		@include breakpoint(720px) {
+			float: left;
+			display: block;
+		}
+	}
+	.m-offerGallery2_th_pagin {
+		display: none;
+	}
+}
+.m-offerGallery2_popoup {
+	max-width: 800px;
+	.m-offerGallery2_popThumbs {
+		float: left;
+		width: 20%;
+		.m-offerGallery2_popItem {
+			margin-bottom: 10px;
+			display: block;
+			cursor: pointer;
+			&.active {
+				opacity: 0.7;
+			}
+		}
+	}
+	.m-offerGallery2_popPic {
+		float: right;
+		width: 78%;
+		.m-offerGallery2_nav {
+			a {
+				float: left;
+				margin-right: 10px;
+			}
+		}
+		.m-offerGallery2_zoom {
+			position: relative;
+			margin-left: 30px;
+			height: 400px;
+		}
+	}
+}

@@ -1,0 +1,18 @@
+
+.m-offerSizes {
+	.m-offerSizes_item {
+		float: left;
+		padding: 0 6px;
+		margin-right: 3px;
+		font-size: 12px;
+		line-height: 24px;
+		color: $cl-grey6;
+		text-align: center;
+		cursor: pointer;
+		border: 1px solid $cl-greyE;
+		&:hover {
+			border-color: $cl-black;
+			color: $cl-black;
+		}
+	}
+}

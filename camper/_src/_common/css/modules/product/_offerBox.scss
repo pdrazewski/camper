@@ -1,0 +1,529 @@
+
+.b-offerBox_list {
+	&.m-offerBox {
+		position: relative;
+		.m-offerBox_loader {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 10000;
+			padding-top: 100px;
+			font: normal 18px/18px $font-primary;
+			color: $cl-grey3;
+			text-align: center;
+			background: rgba(255,255,255,0.95);
+			img {
+				margin-bottom: 30px;
+			}
+		}
+		.m-offerBox_item {
+			@include box-sizing(border-box);
+			padding: 15px 0;
+			border-bottom: 1px solid $cl-black;
+			@include breakpoint(tablet) {
+				padding: 30px;
+				border: 1px solid $cl-black;
+				border-top: 0;
+			}
+			&.is-recommended {
+				border: 1px solid $cl-secondary;
+			}
+		}
+		.m-offerBox_header {
+			position: relative;
+			margin-bottom: 10px;
+			text-align: center;
+			@include breakpoint(tablet) {
+				margin-bottom: 25px;
+				text-align: left;
+			}
+			a {
+				display: inline-block;
+				overflow: hidden;
+				font: 500 16px/25px $font-secondary;
+				color: $cl-grey3;
+				@include breakpoint(tablet) {
+					font-size: 22px;
+				}
+				@include breakpoint(desktop) {
+					max-width: 67%;
+				}
+			}
+			.m-offerBox_opinion,
+			.m-offerBox_producer,
+			.m-offerBox_ship {
+				display: none;
+				@include breakpoint(tablet) {
+					display: inline-block;
+					float: none;
+					margin: 0 30px 0 0;
+				}
+				@include breakpoint(desktop) {
+					display: none;
+				}
+			}
+		}
+		.m-offerBox_nameMobile {
+			display: none;
+		}
+		.m-offerBox_codes {
+			display: none;
+			font: normal 13px/21px $font-primary;
+			color: $cl-grey5;
+			@include breakpoint(tablet) {
+				display: block;
+				margin: 5px 0 10px;
+				text-align: left;
+				br {
+					display: none;
+				}
+			}
+			@include breakpoint(desktop) {
+				float: right;
+				margin: 0;
+				text-align: right;
+				br {
+					display: block;
+				}
+			}
+		}
+		.m-offerBox_inner {
+			@include display-flex;
+			@include flex-wrap(wrap);
+			@include breakpoint(tablet) {
+				@include align-items(flex-start);
+			}
+			.m-offerBox_opinion {
+				@include breakpoint(tablet) {
+					display: none;
+					width: auto;
+					text-align: left;
+				}
+				@include breakpoint(desktop) {
+					display: block;
+				}
+			}
+			.m-offerBox_producer {
+				display: none;
+				@include breakpoint(desktop) {
+					display: block;
+				}
+			}
+			.m-offerBox_ship {
+				display: none;
+				@include breakpoint(desktop) {
+					display: block;
+				}
+			}
+		}
+		.m-offerBox_content {
+			@include order(1);
+			width: 100%;
+			@include breakpoint(tablet) {
+				@include order(inherit);
+				@include flex(1);
+				width: auto;
+				padding: 0 20px 0 0;
+			}
+			@include breakpoint("1350px") {
+				padding: 0 60px 0 0;
+			}
+		}
+		.m-offerBox_image {
+			@include order(2);
+			width: 100%;
+			max-width: 100%;
+			text-align: center;
+			@include breakpoint(tablet) {
+				margin-bottom: 30px;
+			}
+			@include breakpoint(tablet_big) {
+				@include order(inherit);
+				@include align-self(center);
+				width: 280px;
+				padding-right: 20px;
+				margin-bottom: 0;
+			}
+			@include breakpoint(desktop_small) {
+				width: 100%;
+				padding: 0;
+			}
+			@include breakpoint("1300px") {
+				width: 280px;
+			}
+		}
+		.m-offerBox_action {
+			@include order(3);
+			width: 100%;
+			text-align: center;
+			@include breakpoint(tablet) {
+				@include order(inherit);
+				width: 220px;
+				text-align: right;
+			}
+		}
+		.m-offerBox_contentTop {
+			@include display-flex;
+			@include align-items(center);
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		.m-offerBox_attributes {
+			display: none;
+			margin-bottom: 25px;
+			@include breakpoint(tablet) {
+				display: block;
+			}
+		}
+		.m-offerBox_price {
+			margin: 10px 0;
+		}
+		.m-offerBox_contentBottom {
+			@include align-items(center);
+			display: none;
+			width: 100%;
+			@include breakpoint(tablet) {
+				@include display-flex;
+			}
+		}
+		.m-offerBox_compare {
+			position: relative;
+			display: inline-block;
+			padding-left: 20px;
+			font-size: 13px;
+			color: $cl-grey5;
+			input[type="checkbox"] {
+				position: absolute;
+				top: 3px;
+				left: 0;
+			}
+		}
+		.m-offerBox_saveBox {
+			position: relative;
+			display: inline-block;
+			padding-left: 20px;
+			margin-left: 60px;
+			font-size: 13px;
+			i {
+				position: absolute;
+				top: 3px;
+				left: 0;
+			}
+			a {
+				font-size: inherit;
+				color: $cl-grey5;
+			}
+		}
+		.m-offerBox_installment {
+			display: none;
+			margin-bottom: 15px;
+			font: normal 16px/16px $font-primary;
+			color: $cl-grey3;
+			@include breakpoint(tablet) {
+				display: block;
+			}
+			span {
+				color: $cl-secondary;
+			}
+			a {
+				font-size: inherit;
+				color: $cl-primary;
+			}
+		}
+		.m-offerBox_cta {
+			margin-bottom: 15px;
+			@include breakpoint(tablet) {
+				margin-bottom: 25px;
+			}
+		}
+		.m-offerBox_availability {
+			display: none;
+			font: 500 16px/16px $font-secondary;
+			color: $cl-grey3;
+			@include breakpoint(tablet) {
+				display: block;
+			}
+			i {
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+		}
+		.m-offerBox_postscript {
+			display: none;
+			margin-bottom: 15px;
+			font: 500 16px/16px $font-secondary;
+			color: $cl-grey3;
+			@include breakpoint(tablet) {
+				display: block;
+			}
+		}
+		.m-offerBox_opinion {
+			float: left;
+			width: 100%;
+			font: normal 16px/21px $font-primary;
+			color: $cl-primary;
+			text-align: center;
+			a {
+				font: normal 16px/21px $font-primary;
+				color: $cl-primary;
+			}
+			@include breakpoint(tablet) {
+				width: auto;
+				text-align: left;
+			}
+			span {
+				display: none;
+				@include breakpoint(tablet) {
+					display: inline-block;
+				}
+			}
+			i {
+				vertical-align: top;
+				&:last-of-type {
+					margin-right: 10px;
+				}
+			}
+		}
+		.m-offerBox_producer {
+			float: right;
+			margin: 0 0 0 auto;
+		}
+		.m-offerBox_ship {
+			margin-bottom: 15px;
+			font: 500 16px/16px $font-secondary;
+			color: $cl-black;
+			text-transform: uppercase;
+			i {
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+		}
+		&.is-tiles {
+			@include display-flex;
+			@include flex-wrap(wrap);
+			overflow: hidden;
+			border-left: 1px solid $cl-black;
+			.m-offerBox_item {
+				@include box-sizing(border-box);
+				float: left;
+				width: 45%;
+				padding: 15px 0;
+				margin: 0 2.5%;
+				border: 0;
+				border-right: 1px solid $cl-black;
+				border-bottom: 1px solid $cl-black;
+				@include breakpoint(700px) {
+					float: left;
+					width: 33.33333%;
+					padding: 15px 2%;
+					margin: 0;
+				}
+				@include breakpoint(1300px) {
+					float: left;
+					width: 25%;
+					padding: 15px 2%;
+					margin: 0;
+				}
+				&.is-recommended {
+					position: relative;
+					&:after {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						height: 1px;
+						background: $cl-secondary;
+						content: ' ';
+					}
+				}
+			}
+			.m-offerBox_inner {
+				flex-direction: column;
+			}
+			.m-offerBox_producer {
+				display: none;
+			}
+			.m-offerBox_action {
+				@include order(4);
+				width: 100%;
+			}
+			.m-offerBox_contentTop {
+				text-align: center;
+			}
+			.m-offerBox_opinion {
+				display: block;
+				float: none;
+				margin: 0 auto;
+				span {
+					display: none;
+				}
+			}
+			.m-offerBox_header {
+				display: none;
+			}
+			.m-offerBox_image {
+				@include order(1);
+			}
+			.m-offerBox_ship {
+				display: none;
+			}
+			.m-offerBox_cta {
+				text-align: center;
+			}
+			.m-offerBox_availability {
+				font-size: 14px;
+				text-align: center;
+			}
+			.m-offerBox_postscript {
+				display: none;
+			}
+			.m-offerBox_saveBox {
+				display: none;
+			}
+			.m-offerBox_installment {
+				display: none;
+			}
+			.m-offerBox_contentBottom {
+				text-align: center;
+			}
+			.m-offerBox_compare {
+				margin: 0 auto 10px;
+			}
+			.m-offerBox_nameMobile {
+				@include order(2);
+				display: block;
+				width: 100%;
+				height: 50px;
+				min-height: 50px;
+				margin: 15px 0;
+				overflow: hidden;
+				text-align: center;
+				@include breakpoint(tablet) {
+					@include order(3);
+				}
+				a {
+					display: inline-block;
+					overflow: hidden;
+					font: 400 16px/25px $font-secondary;
+					color: $cl-grey3;
+				}
+			}
+			.m-offerBox_attributes {
+				display: none;
+			}
+			.m-offerBox_content {
+				@include order(3);
+				width: 100%;
+				padding: 0;
+				clear: both;
+				@include breakpoint(tablet) {
+					@include order(2);
+				}
+			}
+		}
+		&.is-list {
+			.m-offerBox_item {
+				padding: 30px 30px 30px 0;
+			}
+			.m-offerBox_header {
+				position: static;
+				margin: 0 30% 0 115px;
+				a {
+					font-size: 16px;
+					line-height: 20px;
+				}
+				.m-offerBox_opinion {
+					display: block;
+					min-width: 125px;
+					margin: 0;
+					vertical-align: top;
+					@include breakpoint(desktop) {
+						display: inline-block;
+						margin: 0 0 0 20px;
+					}
+					span {
+						display: none;
+					}
+				}
+			}
+			.m-offerBox_image {
+				@include transform(translateY(-50%));
+				position: absolute;
+				top: 50%;
+				left: 0;
+				max-width: 55px;
+				padding: 30px;
+			}
+			.m-offerBox_attributes {
+				margin-top: 5px;
+				margin-bottom: 30px;
+				@include breakpoint(desktop) {
+					margin-top: 0;
+				}
+			}
+			.m-offerBox_opinion,
+			.m-offerBox_ship,
+			.m-offerBox_availability,
+			.m-offerBox_postscript,
+			.m-offerBox_contentTop,
+			.m-offerBox_producer {
+				display: none;
+			}
+			.m-offerBox_codes {
+				position: absolute;
+				right: 30%;
+				bottom: 0;
+				left: 115px;
+				text-align: left;
+				@include breakpoint(desktop) {
+					bottom: 30px;
+				}
+				span {
+					@include breakpoint(desktop) {
+						padding-left: 15px;
+					}
+				}
+				br {
+					display: block;
+					@include breakpoint(desktop) {
+						display: none;
+					}
+				}
+			}
+			.m-offerBox_contentBottom {
+				display: none;
+			}
+			.m-offerBox_inner {
+				margin-left: 115px;
+			}
+			.m-offerBox_content {
+				@include flex(2);
+				padding: 0 20px 0 0;
+			}
+			.m-offerBox_action {
+				@include flex(1);
+				@include display-flex;
+				@include flex-wrap(wrap);
+				min-width: 275px;
+				margin-top: -30px;
+			}
+			.m-offerBox_installment {
+				@include order(3);
+				width: 100%;
+				margin: 5px 0 0 0;
+			}
+			.m-offerBox_cta {
+				margin: 0 0 0 20px;
+			}
+		}
+	}
+}
+.b-offer_listReco {
+	.m-offerBox_image {
+		float: left;
+		width: 40%;
+		margin-right: 5px;
+	}
+}

@@ -1,0 +1,21 @@
+
+.m-offerCount {
+	margin: 10px 0;
+	.m-offerCount_btn {
+		font-size: 16px;
+		cursor: pointer;
+		&:hover {
+			color: $cl-tertiary;
+		}
+	}
+	.m-offerCount_txt {
+		margin-right: 5px;
+	}
+	.m-offerCount_inp {
+		width: 30px;
+		padding: 8px 10px;
+		margin: 0 5px;
+		text-align: center;
+		border: 1px solid $cl-greyD;
+	}
+}

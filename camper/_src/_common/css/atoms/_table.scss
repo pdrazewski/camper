@@ -1,0 +1,99 @@
+
+.m-table {
+	width: 100%;
+	thead {
+		th {
+			padding: 10px;
+			font-family: $font-secondary;
+			font-size: 12px;
+			font-weight: 400;
+			background: $cl-greyE;
+			border: 1px solid $cl-greyD;
+		}
+	}
+	tr {
+		th {
+			padding: 10px;
+			font-family: $font-secondary;
+			font-size: 12px;
+			font-weight: 400;
+			background: $cl-greyE;
+			border: 1px solid $cl-greyD;
+		}
+		td {
+			padding: 10px;
+			font-family: $font-secondary;
+			font-size: 12px;
+			vertical-align: top;
+			border-top: 1px solid $cl-greyA;
+		}
+	}
+	a {
+		color: $cl-primary;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	.m-table_price {
+		color: $cl-red;
+	}
+}
+.m-table_strip {
+	tbody {
+		tr:nth-child(even) {
+			background-color: #F6F6F6;
+		}
+	}
+}
+.m-table_bordered {
+	width: 100%;
+	thead {
+		th {
+			border: 1px solid #DDD;
+			border-bottom: 2px solid #DDD;
+		}
+	}
+	tbody {
+		td {
+			border: 1px solid #DDD;
+		}
+	}
+}
+.b-offerBox {
+	table {
+		color: $cl-grey3;
+		td {
+			font: normal 16px/25px $font-primary;
+			span {
+				padding-right: 5px;
+				color: $cl-primary;
+			}
+			&:first-child {
+				padding-right: 55px;
+			}
+		}
+	}
+	.is-list {
+		table {
+			display: block;
+			max-height: 25px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		tr {
+			display: none;
+			&:first-of-type,
+			&:nth-child(2) {
+				display: inline-block;
+			}
+			td {
+				float: left;
+				padding-right: 4px;
+			}
+			span {
+				padding: 0;
+			}
+		}
+	}
+}

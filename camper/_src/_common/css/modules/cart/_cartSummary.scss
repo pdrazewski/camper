@@ -1,0 +1,40 @@
+
+.m-cartSummary {
+	font-size: 14px;
+	clear: both;
+	overflow: hidden;
+	@include breakpoint(phone_big) {
+		float: right;
+		clear: none;
+	}
+	.m-cartSummary_data {
+		width: 100%;
+		font-family: $font-primary;
+		@include breakpoint(phone_big) {
+			float: right;
+			font-family: $font-primary;
+		}
+		td {
+			text-align: right;
+			padding: 5px 0 5px 15px;
+			font-family: $font-primary;
+			@include breakpoint(phone_big) {
+				font-family: $font-primary;
+			}
+			&.m-cartSummary_name {
+				text-align: left;
+				padding-left: 0;
+				@include breakpoint(phone_big) {
+					text-align: right;
+				}
+			}
+			&.m-cartSummary_price {
+				color: $cl-red;
+			}
+		}
+		.m-cartSummary_last {
+			font-weight: 700;
+			font-size: 21px;
+		}
+	}
+}

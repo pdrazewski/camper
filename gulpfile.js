@@ -11,7 +11,8 @@ var browserSync = require('browser-sync').create();
 var gulpPostcss = require('gulp-postcss');
 var cssdeclsort = require('css-declaration-sorter');
 var jshint = require('gulp-jshint');
-var Server = require('karma').Server;
+var notify = require("gulp-notify");
+
 
 var contentful = require('contentful');
 var client = contentful.createClient({
@@ -19,12 +20,6 @@ var client = contentful.createClient({
   accessToken: '2aad12b0f84c025713502eb5a6bc66045e429358f2e2a4f008aac899b1e95e4e'
 });
 
-gulp.task('test', function (done) {
-  return new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
-});
 
 
 // compile htmls using nunjucks
@@ -41,6 +36,7 @@ gulp.task('compile', function() {
 	}))
 	.pipe(gulp.dest(dest))
 	.pipe(browserSync.stream())
+	.pipe(notify("Camper arrive with nunjacks"))
 });
 
 // compile sass using gulp-sass and bulk-sass
@@ -59,6 +55,7 @@ gulp.task('sass', function () {
 	    .pipe(autoprefixer())
 	    .pipe(gulp.dest(dest))
 	    .pipe(browserSync.stream())
+	    .pipe(notify("Camper got a tank full of css"));
 	    .resume()
 });
 
@@ -129,6 +126,7 @@ gulp.task('default', ['browser-sync','watch']);
 // scss-to-json
 // css uncss
 // gulp clean _dist from .scss files
+// changed .https://github.com/sindresorhus/gulp-changed
 
 
 

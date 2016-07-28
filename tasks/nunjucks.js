@@ -3,6 +3,8 @@ var gulp = require('gulp');
 var notify = require("gulp-notify");
 var nunjucksRender = require('gulp-nunjucks-render');
 var browserSync = require('browser-sync').create();
+var data = require('gulp-data');
+var fs = require('fs');
 gulp.task('compile', function() {
  	var appname = camperSetup.appHelper();
  	var dest = appname ? 'apps/'+appname+'/_dist' : 'camper/_dist';
@@ -12,9 +14,13 @@ gulp.task('compile', function() {
 		'camper/_src/templates',
 		'camper/_src/modules',
 		'apps/'+appname+'/_src/templates'
-		]
+		],
+		manageEnv:function(env){
+			var dataPath = appname ? 'apps/'+appname+'/_src/config.json' : 'camper/_src/config.json'; 
+        	var data = JSON.parse(fs.readFileSync(dataPath));
+        	env.addGlobal('data', data);
+    	}
 	}))
 	.pipe(gulp.dest(dest))
 	.pipe(browserSync.stream())
-	.pipe(notify("Camper arrive with nunjacks"))
 });

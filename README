@@ -45,3 +45,33 @@ is - for states
 // hash for cache images
 // scss-to-json
 // css uncss
+
+
+// # env
+// contentfull - sprawdzam
+// errors nunjucks
+// menu dla stron
+// docs
+// ui
+// minify html
+// page-speed?
+
+// #js
+// js hint
+// react-babel builds - https://jonsuh.com/blog/integrating-react-with-gulp/
+// jasmine - https://syropia.net/journal/javascript-testing-with-jasmine-and-gulp-redux
+// uglify
+// show modules/blocks/pages/js bindings
+
+
+// #css
+// google fonts? - https://www.npmjs.com/package/gulp-google-webfonts
+// typekit?
+// images sprite + pngmin
+// ie8 styles''
+// hash for cache images
+// scss-to-json
+// css uncss
+// gulp clean _dist from .scss files
+// changed .https://github.com/sindresorhus/gulp-changed
+

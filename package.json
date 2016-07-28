@@ -24,6 +24,7 @@
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-spec-reporter": "0.0.26",
-    "nunjucks": "^2.4.2"
+    "nunjucks": "^2.4.2",
+    "require-dir": "^0.3.0"
   }
 }

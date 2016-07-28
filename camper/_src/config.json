@@ -1,5 +1,8 @@
 {
     "core": {
         "title": "CamperCSS src"
+    },
+    "breadcrumb": {
+        "home": 0
     }
 }

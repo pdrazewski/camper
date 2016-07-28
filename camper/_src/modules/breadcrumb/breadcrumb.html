@@ -1,14 +1,15 @@
 {% macro breadcrumb(
-	iconHome = 0,
+	iconHome = data.breadcrumb.home,
 	data, 
 	separator = '<i class="fa fa-angle-right"></i>',
 	homepage = '<i class="fa fa-home"></i>',
 	back = '<i class="fa fa-angle-left"></i>',
-	isSelect = null,
-	backOnLastItem = false
+	isSelect = null, 
+	backOnLastItem = false  
 ) %}
 <div class="m-breadcrumb">
 	<ul>
+		{{iconHome}}
 		{% if iconHome != 0 %}
 		<li class="m-breadcrumb_item">
 			<a href="{{ data.route }}">{{ homepage|safe }}</a>

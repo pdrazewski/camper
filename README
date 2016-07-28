@@ -75,3 +75,25 @@ is - for states
 // gulp clean _dist from .scss files
 // changed .https://github.com/sindresorhus/gulp-changed
 
+
+
+
+http://labertheme.com/demo/lab_eren/layout3/en/
+http://delphinus.demo.arw.tf/?___store=german
+http://zeiran6.demo.towerthemes.com/index.php?route=common/home
+
+
+1. modular architecture
+2. template inheritance via apps
+3. react modules
+4. json data driven modules (also from contentfull)
+5. responsive modules
+6. scss
+7. landing page development
+8. mail template development
+9. js testing via Jasmin and nichwatch with browserstack
+10. gulp task runner
+11. babel es6 transpiler
+12. living styleguide
+13. ui docs
+14. layout helper (show blocks, modules, atoms)

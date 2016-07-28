@@ -10,10 +10,20 @@ var server = require('gulp-express');
 var browserSync = require('browser-sync').create();
 var gulpPostcss = require('gulp-postcss');
 var cssdeclsort = require('css-declaration-sorter');
-var contentful = require('contentful')
+var jshint = require('gulp-jshint');
+var Server = require('karma').Server;
+
+var contentful = require('contentful');
 var client = contentful.createClient({
   space: 'm2t0hdt0zmhg',
   accessToken: '2aad12b0f84c025713502eb5a6bc66045e429358f2e2a4f008aac899b1e95e4e'
+});
+
+gulp.task('test', function (done) {
+  return new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
 
@@ -104,9 +114,8 @@ gulp.task('default', ['browser-sync','watch']);
 
 // #js
 // js hint
-// react-babel builds
-// tests
-// jasmine
+// react-babel builds - https://jonsuh.com/blog/integrating-react-with-gulp/
+// jasmine - https://syropia.net/journal/javascript-testing-with-jasmine-and-gulp-redux
 // uglify
 // show modules/blocks/pages/js bindings
 

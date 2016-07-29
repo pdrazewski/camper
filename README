@@ -1,6 +1,7 @@
 #campercss
 
 atomic design
+origami
 rizzo
 patternlab
 semantic-ui
@@ -9,6 +10,7 @@ intuitcss
 bem
 oocss, smacss
 styleguides.io
+
 
 prefixes:
 
@@ -19,22 +21,18 @@ m - for modules
 a - for generic atoms
 is - for states
 
-### env
-// contentfull
-// errors nunjucks
-// menu dla stron
-// docs
-// ui
-// minify html
-// page-speed?
+test:
+jasmine
+nightwatch
 
-### js
-// js hint
-// react-babel builds
-// tests
-// jasmine
-// uglify
-// show modules/blocks/pages/js bindings
+js:
+underscore
+babel
+gulp/webpack
+es6
+react
+native
+jquery
 
 
 ### css

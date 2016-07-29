@@ -1,0 +1,34 @@
+{% set tabsData = [{
+	"alert": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi odio eum nulla quia reiciendis recusandae dolore rerum."
+}] %}
+
+{% block module %}
+<div class="m-alert m-alert_info g-mt20">
+	{% for data in tabsData %}
+		<p>{{data.alert}}</p>
+		<span class="m-alert_close js-alertClose">&times;</span>
+	{% endfor %}
+</div>
+<code>.m-alert .m-alert_info</code>
+<div class="m-alert m-alert_warning g-mt20 ">
+	{% for data in tabsData %}
+		<p>{{data.alert}}</p>
+		<span class="m-alert_close js-alertClose">&times;</span>
+	{% endfor %}
+</div>
+<code>.m-alert .m-alert_warning</code>
+<div class="m-alert m-alert_error g-mt20 ">
+	{% for data in tabsData %}
+		<p>{{data.alert}}</p>
+		<span class="m-alert_close js-alertClose">&times;</span>
+	{% endfor %}
+</div>
+<code>.m-alert .m-alert_error</code>
+<div class="m-alert m-alert_success g-mt20 ">
+	{% for data in tabsData %}
+		<p>{{data.alert}}</p>
+		<span class="m-alert_close js-alertClose">&times;</span>
+	{% endfor %}
+</div>
+<code>.m-alert .m-alert_success</code>
+{% endblock module %}

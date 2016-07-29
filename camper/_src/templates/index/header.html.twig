@@ -1,0 +1,85 @@
+{% set elements = {
+		"headerAttr": config.core.header.attr,
+		"hmbg": "base/header/hmbg-loader.html.twig",
+		"wide": "base/header/wide-header-loader.html.twig",
+		"wrapped": "base/header/wrap-header-loader.html.twig",
+		"logo": "base/header/logo-loader.html.twig",
+		"cartQuick": "base/header/cartQuick-loader.html.twig",
+		"search": "base/header/search-loader.html.twig",
+		"additionals": "base/header/additionals-loader.html.twig",
+		"additionalsSecondary": "base/header/additionalsSecondary-loader.html.twig",
+		"menu": "base/header/menu-loader.html.twig",
+		"tertiary": "base/header/tertiary-loader.html.twig"
+	}
+%}
+
+{% set primary %}
+	{% if config.core.header.primary.active == 1 %}
+	<div class="b-header_primary clearfix2" {% if config.core.header.primary.attributes %}{{ config.core.header.primary.attributes|raw }}{% endif %}>
+		{% if config.core.header.primary.order is null or config.core.header.primary.order is not defined or config.core.header.primary.order == 1 %}
+			{% for item in config.core.header.primary.core %}
+				{% include attribute(elements, item) %}
+			{% endfor %}
+			<div class="b-header_wrapper clearfix2">
+				{% for item in config.core.header.primary.wrapped %}
+					{% include attribute(elements, item) %}
+				{% endfor %}
+			</div>
+		{% else %}
+			<div class="b-header_wrapper clearfix2">
+				{% for item in config.core.header.primary.wrapped %}
+					{% include attribute(elements, item) %}
+				{% endfor %}
+			</div>
+			{% for item in config.core.header.primary.core %}
+				{% include attribute(elements, item) %}
+			{% endfor %}
+		{% endif %}
+	</div>
+	{% endif %}
+{% endset %}
+
+{% set secondary %}
+	{% if config.core.header.secondary.active == 1 %}
+	<div class="b-header_secondary clearfix2" {% if config.core.header.secondary.attributes %}{{ config.core.header.secondary.attributes|raw }}{% endif %}>
+		{% if config.core.header.secondary.order is null or config.core.header.secondary.order is not defined or config.core.header.secondary.order == 1 %}
+			{% for item in config.core.header.secondary.core %}
+				{% include attribute(elements, item) %}
+			{% endfor %}
+			<div class="b-header_wrapper clearfix2">
+				{% for item in config.core.header.secondary.wrapped %}
+					{% include attribute(elements, item) %}
+				{% endfor %}
+			</div>
+		{% else %}
+			<div class="b-header_wrapper clearfix2">
+				{% for item in config.core.header.secondary.wrapped %}
+					{% include attribute(elements, item) %}
+				{% endfor %}
+			</div>
+			{% for item in config.core.header.secondary.core %}
+				{% include attribute(elements, item) %}
+			{% endfor %}
+		{% endif %}
+	</div>
+	{% endif %}
+{% endset %}
+
+{% set tertiary %}
+	{% if config.core.header.tertiary.active == 1 %}
+		{% for item in config.core.header.tertiary.wrapped %}
+			{% include attribute(elements, item) %}
+		{% endfor %}
+	{% endif %}
+{% endset %}
+
+<header class="b-header" {{elements.headerAttr}}>
+	{% if config.core.header.order is null or config.core.header.order is not defined or config.core.header.order == 1 %}
+		{{ primary|raw }}
+		{{ secondary|raw }}
+	{% else %}
+		{{ secondary|raw }}
+		{{ primary|raw }}
+	{% endif %}
+	{{ tertiary|raw }}
+</header>

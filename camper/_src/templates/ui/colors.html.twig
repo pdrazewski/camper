@@ -1,0 +1,14 @@
+{% set colorsData = colors|cast_to_array %}
+<p>
+	Definicje kolorow znajduja się w
+	<code>common/css/custom/_colors.scss</code>
+</p>
+<br>
+{% for item in colorsData %}
+    <div class="b-ui_colorItem">
+		<div class="b-ui_colorView" style="background-color:{{item[1]}};"></div>
+        <div class="b-ui_colorLabel">
+		<code>{{ item[0] }}: {{ item[1] }}</code>
+		</div>
+    </div>
+{% endfor %}

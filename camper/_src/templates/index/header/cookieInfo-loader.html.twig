@@ -1,0 +1,33 @@
+{% include '_modules/cookieInfo/cookieInfo.html.twig' %}
+
+
+{% if config.cookie.additionals == 1 %}
+	<a class="js-mfp-trigger g-dn" id="js-cookiePopupBtn" href="#"
+		data-cookie-show-delay="6"
+		data-cookie-exit-popup="true"
+		data-cookie-expire-days="1"
+		data-cookie-name="popupCookie"
+		data-mfp-target="#js-cookiePopup"
+		data-mfp-type="inline"
+		data-url-prevent-phrase="utm_source=newsletter"
+	></a>
+{% import "_macro/magnific.html.twig" as mfp %}
+{% set target = 'js-cookiePopup' %}
+{% set customClass = 'false' %}
+{% set mfp_content %}
+<div class="g-tac clearfix2">
+	<a href="#"><img src="common/images/banners/1-480.jpg" alt=""></a>
+</div>
+{% endset %}
+{{mfp.magnific(target, customClass, mfp_content)}}
+
+<div id="box1" class="g-dn g-p10 g-posa g-tar" style="left:5px; top:100px; z-index:100; border:1px solid #ccc;">
+<a href="#" id="close1" class="js-closeBox" data-cookie="true" data-target="#box1" data-cookie-expire-days="1" data-cookie-name="cookiebox1">X</a>
+<p>Promo box 1</p>
+</div>
+
+<div id="box2" class="g-dn g-p10 g-posa g-tar" style="left:5px; top:200px; z-index:100; border:1px solid #ccc;">
+<a href="#" id="close2" class="js-closeBox" data-cookie="true" data-target="#box2" data-cookie-expire-days="1" data-cookie-name="cookiebox2">X</a>
+<p>Promo box 2</p>
+</div>
+{% endif %}

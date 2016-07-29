@@ -1,0 +1,7 @@
+{% set menuData = uiData|default(null) %}
+
+{% include '_modules/menu/menu.html.twig'
+	with {
+		'menuData': menuData
+	}
+%}

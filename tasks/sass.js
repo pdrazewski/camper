@@ -7,7 +7,6 @@ var bulkSass = require('gulp-sass-bulk-import');
 var clean = require('gulp-clean');
 var gulpPostcss = require('gulp-postcss');
 var cssdeclsort = require('css-declaration-sorter');
-var browserSync = require('browser-sync').create();
 gulp.task('sass', function () {
 	var appname = camperSetup.appHelper();
  	var dest = appname ? 'apps/'+appname+'/_dist/common/css/' : 'camper/_dist/common/css/';
@@ -22,7 +21,6 @@ gulp.task('sass', function () {
 		}).on('error', sass.logError))
 	    .pipe(autoprefixer())
 	    .pipe(gulp.dest(dest))
-	    .pipe(browserSync.stream())
 	    .pipe(notify("Camper got a tank full of css"))
 	    .resume()
 });

@@ -1,0 +1,65 @@
+{% set footerData = [
+	{
+		"title": "<span>Zakupy</span>",
+		"items": [{
+			"name": "Twój koszyk"
+			}, {
+			"name": "Dostawa"
+			}, {
+			"name": "Zakupy na raty"
+			}, {
+			"name": "Śledzenie przesyki"
+			}, {
+			"name": "Serwis"
+			}, {
+			"name": "Zwroty/Reklamacje"
+		}]
+	}, {
+		"title": "<span>Twoje konto</span>",
+		"items": [{
+			"name": "Rejestracja"
+			}, {
+			"name": "Logowanie"
+			}, {
+			"name": "Edycja danych"
+			}, {
+			"name": "Ostatnio oglądane"
+		}]
+	}, {
+		"title": "<span>Informacje</span>",
+		"items": [{
+			"name": "Regulamin sklepu"
+			}, {
+			"name": "Zakupy na raty"
+			}, {
+			"name": "Praca/Kariera"
+			}, {
+			"name": "Polityka prywatności"
+			}
+		]
+	}, {
+		"title": "<span>Dlaczego My</span>",
+		"items": [{
+			"name": "O firmie"
+			}, {
+			"name": "Karta sklepu"
+			}, {
+			"name": "Praca w sklepie"
+			}, {
+			"name": "Zaufane Opinie"
+			}
+		]
+	}] 
+%}
+{% set content = {
+	"title": "<span>Kontakt</span>",
+	"content" : "<p>Sklep Polska Sp. z o.o.<br> ul. Lorem 10<br> 04-190 Lorem City<br><br> tel. (0 22) 11 51 100<br> fax (0 22) 21 51 199<br> infolinia: +48 189 356 321</p>"
+} %}
+
+{% include '_modules/footer/footer.html.twig'
+	with {
+		'footerData': footerData,
+		"content": content,
+		"contentPosition": 1
+	}
+%}

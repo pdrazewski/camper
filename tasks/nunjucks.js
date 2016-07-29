@@ -2,7 +2,6 @@ var camperSetup = require('../camperHelpers.js');
 var gulp = require('gulp');
 var notify = require("gulp-notify");
 var nunjucksRender = require('gulp-nunjucks-render');
-var browserSync = require('browser-sync').create();
 var data = require('gulp-data');
 var fs = require('fs');
 gulp.task('compile', function() {
@@ -22,5 +21,4 @@ gulp.task('compile', function() {
     	}
 	}))
 	.pipe(gulp.dest(dest))
-	.pipe(browserSync.stream())
 });

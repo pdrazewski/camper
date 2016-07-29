@@ -1,0 +1,39 @@
+{% set menuData = [
+	{
+		"item": "AGD",
+		"url": 'product-list.php'
+	},
+	{
+		"item": "RTV i Telewizory",
+		"url": 'product-list.php'
+	},
+	{
+		"item": "Komputery i Tablety",
+		"url": 'product-list.php'
+	},
+	{
+		"item": "Konsole i Gry",
+		"url": 'product-list.php'
+	},
+	{
+		"item": "Telefony i Smartfony",
+		"url": 'product-list.php'
+	},
+	{
+		"item": "Foto i Kamery",
+		"url": 'product-list.php'
+	},
+	{
+		"item": "AGD do zabudowy",
+		"url": 'product-list.php'
+	},
+	{
+		"item": "AGD małe",
+		"url": 'product-list.php'
+	}
+]%}
+
+
+{% include '_modules/menu/menu.html.twig'
+	with {'menuData': menuData}
+%}

@@ -5,6 +5,15 @@ var browserSync = require('browser-sync').create();
 var requireDir = require('require-dir');
 var tasks = requireDir('./tasks');
 
+gulp.task('browser-sync', function() {
+	var appname = camperSetup.appHelper();
+	var dest = appname ? 'apps/'+appname+'/_dist/' : 'camper/_dist/';
+    browserSync.init({
+        server: {
+            baseDir: dest
+        }
+    });
+});
 
 gulp.task('watch', function() {
 	var appname = camperSetup.appHelper();
@@ -16,7 +25,6 @@ gulp.task('watch', function() {
     gulp.watch(dest+"/*.html").on('change', browserSync.reload);
     gulp.watch(dest+"/common/css/style.css").on('change', browserSync.reload);
 });
-
 
 gulp.task('default', ['browser-sync','watch']);
 

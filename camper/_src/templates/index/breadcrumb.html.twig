@@ -1,0 +1,19 @@
+{% set breadcrumbData = [{
+	"title": "Sklep",
+	"route": "#"
+}, {
+	"title": "Kategoria 1",
+	"route": "#"
+}, {
+	"title": "Kategoria 2",
+	"route": "#"
+}, {
+	"title": "Nazwa produktu lub strony",
+	"route": "#"
+}] %}
+
+{% include "_modules/breadcrumb/breadcrumb.html.twig"
+	with {
+		"breadcrumbData": breadcrumbData
+	} 
+%}

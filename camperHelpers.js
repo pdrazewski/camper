@@ -39,5 +39,21 @@ module.exports = {
 			'apps/'+appname+'/_src/pages/**/*.+(html|nunjucks)'
 		]
 		return inputHTML
+	},
+	reactPathHelper: function(appname) {
+		var input;
+		if (this.app !== false) {
+			var appname = this.app
+		} 
+	 	if (appname) {
+	 		input = [
+	 		'apps/'+appname+'/_src/modules/**/*.jsx'
+	 		]
+	 	} else {
+	 		input = [
+	 		'camper/_src/modules/**/*.jsx'
+	 		]
+	 	}
+	 	return input
 	}
 }

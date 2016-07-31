@@ -13,7 +13,23 @@ var _accordion = require('./modules/accordion/react/accordion.jsx');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_accordion.App, { name: 'Trolololo' }), document.querySelector("#js-accordion-react"));
+var notepad = {
+    notes: [{
+        id: 1,
+        content: "Hello, world!\nBoring.\nBoring.\nBoring."
+    }, {
+        id: 2,
+        content: "React is awesome.\nSeriously, it's the greatest."
+    }, {
+        id: 3,
+        content: "Robots are pretty cool.\nRobots are awesome, until they take over."
+    }, {
+        id: 4,
+        content: "Monkeys.\nWho doesn't love monkeys?"
+    }]
+};
+
+_reactDom2.default.render(_react2.default.createElement(_accordion.CamperAccordion, { name: 'Trolololo', data: notepad }), document.querySelector("#js-accordion-react"));
 
 },{"./modules/accordion/react/accordion.jsx":2,"react":176,"react-dom":30}],2:[function(require,module,exports){
 "use strict";
@@ -21,7 +37,7 @@ _reactDom2.default.render(_react2.default.createElement(_accordion.App, { name: 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.App = undefined;
+exports.CamperAccordion = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -37,45 +53,69 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = exports.App = function (_React$Component) {
-	_inherits(App, _React$Component);
+var Item = function (_React$Component) {
+	_inherits(Item, _React$Component);
 
-	function App() {
-		_classCallCheck(this, App);
+	function Item() {
+		_classCallCheck(this, Item);
 
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Item).apply(this, arguments));
 	}
 
-	_createClass(App, [{
+	_createClass(Item, [{
 		key: "render",
 		value: function render() {
 			return _react2.default.createElement(
 				"div",
 				null,
 				_react2.default.createElement(
-					"h1",
-					null,
-					this.props.name
-				),
-				_react2.default.createElement(
-					"p",
-					null,
-					"This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information."
-				),
-				_react2.default.createElement(
-					"p",
-					null,
+					"div",
+					{ className: "m-accordion_item" },
 					_react2.default.createElement(
-						"a",
-						{ className: "btn btn-primary btn-lg" },
-						"Learn more"
+						"div",
+						{ className: "m-accordion_headline", "data-key": this.props.key },
+						this.props.name
 					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "m-accordion_content" },
+					this.props.name
 				)
 			);
 		}
 	}]);
 
-	return App;
+	return Item;
+}(_react2.default.Component);
+
+var CamperAccordion = exports.CamperAccordion = function (_React$Component2) {
+	_inherits(CamperAccordion, _React$Component2);
+
+	function CamperAccordion() {
+		_classCallCheck(this, CamperAccordion);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(CamperAccordion).apply(this, arguments));
+	}
+
+	_createClass(CamperAccordion, [{
+		key: "render",
+		value: function render() {
+			var notes = this.props.data.notes;
+			return _react2.default.createElement(
+				"div",
+				{ className: "m-accordion" },
+				notes.map(function (note) {
+					var title = note.content.substring(0, note.content.indexOf('\n'));
+					title = title || note.content;
+
+					return _react2.default.createElement(Item, { name: title, key: note.id });
+				})
+			);
+		}
+	}]);
+
+	return CamperAccordion;
 }(_react2.default.Component);
 
 },{"react":176}],3:[function(require,module,exports){

@@ -2,9 +2,10 @@ var camperSetup = require('../camperHelpers.js');
 var gulp = require('gulp');
 var react = require('gulp-react');
 var browserify = require('browserify');
-var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var minify = require('gulp-minify');
+var fs = require("fs");
+var babelify = require("babelify");
 
 gulp.task('react', function() {
 	var appname = camperSetup.appHelper();
@@ -12,16 +13,15 @@ gulp.task('react', function() {
 	return browserify({
 		entries: camperSetup.reactPathHelper(appname).entry
 	})
-	.transform(reactify)
+	.transform(babelify, {presets: ["es2015", "react"]})
 	.bundle()
-	.pipe(source('app.js'))
-	.pipe(gulp.dest(dest))
+	.pipe(fs.createWriteStream(dest+"/bundle.js"));
 })
 
 gulp.task('minifyBuild',['react'], function() {
 	var appname = camperSetup.appHelper();
 	var dest = appname ? 'apps/'+appname+'/_dist/common/js' : 'camper/_dist/common/js';
-  	gulp.src(dest+'/app.js')
+  	gulp.src(dest+'/bundle.js')
     	.pipe(minify({
         	ext:{
             	src:'-debug.js',

@@ -19,11 +19,13 @@ module.exports = {
 		} 
 	 	if (appname) {
 	 		input = [
+	 		'apps/'+appname+'/_src/_common/css/modules/**/*.scss',
 	 		'apps/'+appname+'/_src/_common/css/**/*.scss',
 	 		'apps/'+appname+'/_src/_common/css/*.scss'
 	 		]
 	 	} else {
 	 		input = [
+	 		'camper/_src/_common/css/modules/**/*.scss',
 	 		'camper/_src/_common/css/**/*.scss',
 	 		'camper/_src/_common/css/*.scss'
 	 		]
@@ -47,11 +49,11 @@ module.exports = {
 			var appname = this.app
 		} 
 	 	if (appname) {
-	 		input = 'apps/'+appname+'/_src/modules/**/*.jsx';
+	 		input = ['apps/'+appname+'/_src/modules/**/*.jsx','apps/'+appname+'/_src/main.jsx'];
 	 		entry = 'apps/'+appname+'/_src/main.jsx';
 	 		
 	 	} else {
-	 		input = 'camper/_src/modules/**/*.jsx';
+	 		input = ['camper/_src/modules/**/*.jsx','camper/_src/main.jsx'];
 	 		entry = 'camper/_src/main.jsx';
 	 	}
 	 	return {

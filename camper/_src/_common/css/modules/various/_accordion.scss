@@ -11,7 +11,7 @@
 				&:after {
 					content: "-";
 				}
-			}
+			} 
 		}
 	}
 	.m-accordion_title {
@@ -33,17 +33,17 @@
 		display: none;
 		padding: 0 0 15px;
 	}
-}
+} 
 .b-preCart {
 	.m-accordion {
 		.m-accordion_item {
 			border-bottom: 1px solid $cl-greyD;
-			@include breakpoint(tablet_big) {
+			@include bp(tablet_big) {
 				border-bottom: 0;
 			}
 		}
 		.m-accordion_title {
-			@include breakpoint(tablet_big) {
+			@include bp(tablet_big) {
 				display: none;
 			}
 		}

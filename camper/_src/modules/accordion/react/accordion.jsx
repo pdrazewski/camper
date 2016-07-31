@@ -1,37 +1,22 @@
 import React from 'react';
-
-class Item extends React.Component {
-	render() { 
-		return (
-			<div>
-				<div className="m-accordion_item">
-					<div className="m-accordion_headline" data-key={this.props.key}>
-						{this.props.name}
-					</div>
-				</div> 
-				<div className="m-accordion_content">
-					{this.props.name}
-				</div>
-			</div>
-		);
-	} 
-}
+import {Item} from './elements/item.jsx';
 
 export class CamperAccordion extends React.Component {
 	render() {
 		var notes = this.props.data.notes;
 		return (
-			<div className="m-accordion">
+			<div className="m-accordion" id="js-m-accordion">
 				  {
-                    notes.map(function (note) {
-                        var title = note.content.substring(0,
-                            note.content.indexOf('\n')
-                        );
-                        title = title || note.content;
-                    
+                    notes.map(function (note, index) {
+                    	var activeElement = index == 0 ? true : false;
                         return (
-                        	<Item name={title} key={note.id} />
-                        );
+                        	<Item 
+                        		title={note.title} 
+                        		content={note.content} 
+                        		key={note.id} 
+                        		active={activeElement} 
+                        	/>
+                        ); 
                     })
 				}
 				

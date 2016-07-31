@@ -9,7 +9,7 @@
 		text-decoration: none;
 	} 
 } 
-@import "modules/*.scss";
+@import "modules/**/*.scss";
 @import "blocks/*.scss";   
 .b-mainContent {  
 	max-width: 1200px; 

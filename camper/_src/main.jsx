@@ -7,22 +7,32 @@ var notepad = {
     notes: [
         {
             id: 1,
-            content: "Hello, world!\nBoring.\nBoring.\nBoring."
+            title: "Hello, world!",
+            content: "Boring."
         },
         {
             id: 2,
-            content: "React is awesome.\nSeriously, it's the greatest."
+            title: "React is awesome.",
+            content: "Seriously, it's the greatest."
+
         },
         {
             id: 3,
-            content: "Robots are pretty cool.\nRobots are awesome, until they take over."
+            title: "Robots are pretty cool.",
+            content: "Robots are awesome, until they take over."
         },
         {
             id: 4,
-            content: "Monkeys.\nWho doesn't love monkeys?"
+            title: "Monkeys",
+            content: "Who doesn't love monkeys?"
         }
     ]
 };
 
-ReactDOM.render(<CamperAccordion name="Trolololo" data={notepad} />, document.querySelector("#js-accordion-react"));
+ReactDOM.render(
+	<CamperAccordion 
+		name="Trolololo" 
+		data={notepad} />, 
+	document.querySelector("#js-accordion-react")
+);
   

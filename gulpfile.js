@@ -21,7 +21,7 @@ gulp.task('watch', function() {
 	var appname = camperSetup.appHelper();
 	var inputHTML = camperSetup.htmlPathHelper(appname);
 	var inputCSS = camperSetup.cssPathHelper(appname);
-    var inputReact = camperSetup.reactPathHelper(appname);
+    var inputReact = camperSetup.reactPathHelper(appname).input;
 	var dest = appname ? 'apps/'+appname+'/_dist/' : 'camper/_dist/';
   	gulp.watch(inputHTML, ['compile']);
     gulp.watch(inputCSS, ['sass']);

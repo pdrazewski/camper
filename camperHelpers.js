@@ -42,18 +42,21 @@ module.exports = {
 	},
 	reactPathHelper: function(appname) {
 		var input;
+		var entry;
 		if (this.app !== false) {
 			var appname = this.app
 		} 
 	 	if (appname) {
-	 		input = [
-	 		'apps/'+appname+'/_src/modules/**/*.jsx'
-	 		]
+	 		input = 'apps/'+appname+'/_src/modules/**/*.jsx';
+	 		entry = 'apps/'+appname+'/_src/main.jsx';
+	 		
 	 	} else {
-	 		input = [
-	 		'camper/_src/modules/**/*.jsx'
-	 		]
+	 		input = 'camper/_src/modules/**/*.jsx';
+	 		entry = 'camper/_src/main.jsx';
 	 	}
-	 	return input
+	 	return {
+	 		input: input,
+	 		entry: entry
+	 	}
 	}
 }

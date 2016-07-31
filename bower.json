@@ -1,0 +1,23 @@
+{
+  "name": "campercss",
+  "version": "0.0.1",
+  "authors": [ 
+    "Przemyslaw Drazewski <contact@pdrazewski.com>"
+  ],
+  "license": "MIT",
+  "ignore": [ 
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.3",
+    "es6-shim": "~0.32.0",
+    "jquery": "~2.1.4"
+  },
+  "resolutions": {
+    "es6-shim": "~0.31.2"
+  }
+}

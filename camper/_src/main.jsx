@@ -6,12 +6,12 @@ var CamperAccordion = require('./modules/accordion/react/accordion.jsx');
 var CamperBreadcrmb = require('./modules/breadcrumb/react/breadcrumb.jsx');
 
     
-ReactDOM.render( 
+React.render( 
   	<CamperAccordion name="Accordion" />,
   	document.getElementById('js-accordion-react')
-);
+);  
 
-ReactDOM.render( 
+React.render( 
   	<CamperBreadcrmb name="Breadcrumb" />,
   	document.getElementById('js-breadcrumb-react')
 );

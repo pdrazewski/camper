@@ -1,11 +1,13 @@
  @import "_vars/*.scss";
- @import "_defaults/*.scss";
+ @import "_defaults/*.scss"; 
  body {
-	font-size: 12px;
-	font-family: Arial; 
-	line-height: 18px; 
+	font-size: 15px;
+	font-family: $font-primary; 
+	line-height: 22px; 
+	text-transform: uppercase;
+	font-weight: 300;
 	a {
-		font-size: 12px;
+		font-size: 15px;
 		text-decoration: none;
 	} 
 } 

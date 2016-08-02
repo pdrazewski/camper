@@ -10,6 +10,7 @@ gulp.task('browser-sync', function() {
 	var appname = camperSetup.appHelper();
 	var dest = appname ? 'apps/'+appname+'/_dist/' : 'camper/_dist/';
     browserSync.init({
+        browser: "google chrome",
         server: {
             baseDir: dest
         }

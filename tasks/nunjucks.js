@@ -17,7 +17,7 @@ gulp.task('compile', function() {
 		manageEnv:function(env){
 			var dataPath = appname ? 'apps/'+appname+'/_src/config.json' : 'camper/_src/config.json'; 
         	var data = JSON.parse(fs.readFileSync(dataPath));
-        	env.addGlobal('data', data);
+        	env.addGlobal('camper', data);
     	}
 	}))
 	.pipe(gulp.dest(dest))

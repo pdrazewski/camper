@@ -1,10 +1,8 @@
-<!-- layout.nunjucks -->
-
 <!DOCTYPE html>
 <html lang="en" {% if root %}class="{{root}}"{% endif %}>
 <head>
   	<meta charset="UTF-8"> 
-  	<title>Camper</title>
+  	<title>{{camper.core.title}}</title>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0, shrink-to-fit=no">
   	<link rel="stylesheet" href="common/css/style.css">
   	{% include "_common/meta.html" %}

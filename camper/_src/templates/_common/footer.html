@@ -1,1 +1,21 @@
-footer 
+{% macro loader(attr) %}
+	{% for item in attr %}
+		{% set templateName = "_common/footer/"~item~"-loader.html" %}
+		{% include templateName %}	
+	{% endfor %}
+{% endmacro%}
+
+<footer class="b-footer clearfix2" {{camper.core.footer.footerAttr}}>
+	{% if camper.core.footer.active == 1 %}
+		{% if camper.core.footer.order == 1 %}
+			{{loader(camper.core.footer.core)}}
+		{% endif %}
+		<div class="b-footer_wrapper {{camper.core.footer.wrapperClass}}">
+			{{loader(camper.core.footer.wrapped)}}
+		</div>
+		{% if camper.core.footer.order != 1 %}
+			{{loader(camper.core.footer.core)}}
+		{% endif %}
+	{% endif %}
+</footer>
+{{loader(camper.core.footer.afterFooter)}} 

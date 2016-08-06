@@ -3,17 +3,17 @@ import {Item} from './elements/item.jsx';
 
 export class CamperAccordion extends React.Component {
 	render() {
-		var notes = this.props.data.notes;
+		var accordion = this.props.data.accordion;
 		return (
 			<div className="m-accordion" id="js-m-accordion">
 				  {
-                    notes.map(function (note, index) {
+                    accordion.map(function (accordion, index) {
                     	var activeElement = index == 0 ? true : false;
                         return (
                         	<Item 
-                        		title={note.title} 
-                        		content={note.content} 
-                        		key={note.id} 
+                        		title={accordion.title} 
+                        		content={accordion.content} 
+                        		key={accordion.id} 
                         		active={activeElement} 
                         	/>
                         ); 

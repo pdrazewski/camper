@@ -1,6 +1,7 @@
 {
     "core": {
         "title": "CamperCSS src",
+        "link": "/",
         "header": {
             "attr": "",
             "order": 1,

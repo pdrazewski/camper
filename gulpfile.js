@@ -17,10 +17,17 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('copy', function() {
+gulp.task('copyJS', function() {
     var appname = camperSetup.appHelper();
     var dest = appname ? 'apps/'+appname+'/_dist/common/js/libs/' : 'camper/_dist/common/js/libs/';
     gulp.src(['*bower_components/**/*'])
+    .pipe(gulp.dest(dest))
+})
+gulp.task('copyImages', function() {
+    var appname = camperSetup.appHelper();
+    var dest = appname ? 'apps/'+appname+'/_dist/common/images/' : 'camper/_dist/common/images/';
+    var source = appname ? 'apps/'+appname+'/_src/_common/images/**/*' : 'camper/_src/_common/images/**/*';
+    gulp.src(source)
     .pipe(gulp.dest(dest))
 })
 
@@ -38,7 +45,7 @@ gulp.task('watch', function() {
     gulp.watch(dest+"/common/css/style.css").on('change', browserSync.reload);
 });
 
-gulp.task('default', ['copy','compile','sass','minifyBuild','browser-sync','watch']);
+gulp.task('default', ['copyJS','copyImages','compile','sass','minifyBuild','browser-sync','watch']);
 
 
 

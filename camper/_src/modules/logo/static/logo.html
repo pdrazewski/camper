@@ -1,0 +1,33 @@
+{% macro logo(
+	tag = "h1",
+	service = camper.core.link, 
+	breakpoint = 800,
+	className,
+	path = "common/images/logo/logo.png", 
+	pathRetina = "common/images/logo/logo@2x.png",
+	svg = false
+) %}
+<div itemscope itemtype="http://schema.org/Organization" class="m-logo {{className}}">
+	<{{tag}}>
+	<a itemprop="url" href="{{service}}">
+		{% if svg == true %}
+			<img src="{{path}}" alt="{{service}}">
+		{% else %}
+			<span data-picture data-alt="{{service}}">
+				<span data-src="{{pathRetina}}"></span>
+				<span data-src="{{path}}" data-media="(min-width: {{breakpoint}}px)">
+					<img src="{{path}}" alt="{{service}}">
+				</span>
+				<noscript>
+					<img src="{{path}}" alt="{{service}}">
+				</noscript>
+			</span>
+		{% endif %}
+	</a>
+	</{{tag}}>
+</div>
+
+{% endmacro %}
+
+
+

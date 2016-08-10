@@ -1,0 +1,78 @@
+{% macro favicon(
+	tag = "h1",
+	service = camper.core.link, 
+	breakpoint = 800,
+	className,
+	path = "common/images/logo/logo.png", 
+	pathRetina = "common/images/logo/logo@2x.png",
+	svg = false
+) %}
+<div itemscope itemtype="http://schema.org/Organization" class="m-logo {{className}}">
+	<{{tag}}>
+	<a itemprop="url" href="{{service}}">
+		{% if svg == true %}
+			<img src="{{path}}" alt="{{service}}">
+		{% else %}
+			<span data-picture data-alt="{{service}}">
+				<span data-src="{{pathRetina}}"></span>
+				<span data-src="{{path}}" data-media="(min-width: {{breakpoint}}px)">
+					<img src="{{path}}" alt="{{service}}">
+				</span>
+				<noscript>
+					<img src="{{path}}" alt="{{service}}">
+				</noscript>
+			</span>
+		{% endif %}
+	</a>
+	</{{tag}}>
+</div>
+{% endmacro %}
+
+
+{% set color = color|default('#fff') %}
+{% set version = version|default(null) %}
+
+<link rel="apple-touch-icon" sizes="57x57" href="common/images/favicon/apple-touch-icon-57x57.png?v={{version}}">
+<link rel="apple-touch-icon" sizes="60x60" href="common/images/favicon/apple-touch-icon-60x60.png?v={{version}}">
+<link rel="apple-touch-icon" sizes="72x72" href="common/images/favicon/apple-touch-icon-72x72.png?v={{version}}">
+<link rel="apple-touch-icon" sizes="76x76" href="common/images/favicon/apple-touch-icon-76x76.png?v={{version}}">
+<link rel="apple-touch-icon" sizes="114x114" href="common/images/favicon/apple-touch-icon-114x114.png?v={{version}}">
+<link rel="apple-touch-icon" sizes="120x120" href="common/images/favicon/apple-touch-icon-120x120.png?v={{version}}">
+<link rel="apple-touch-icon" sizes="144x144" href="common/images/favicon/apple-touch-icon-144x144.png?v={{version}}">
+<link rel="apple-touch-icon" sizes="152x152" href="common/images/favicon/apple-touch-icon-152x152.png?v={{version}}">
+<link rel="apple-touch-icon" sizes="180x180" href="common/images/favicon/apple-touch-icon-180x180.png?v={{version}}">
+<link rel="icon" type="image/png" href="common/images/favicon/favicon-32x32.png?v={{version}}" sizes="32x32">
+<link rel="icon" type="image/png" href="common/images/favicon/android-chrome-192x192.png?v={{version}}" sizes="192x192">
+<link rel="icon" type="image/png" href="common/images/favicon/favicon-96x96.png?v={{version}}" sizes="96x96">
+<link rel="icon" type="image/png" href="common/images/favicon/favicon-16x16.png?v={{version}}" sizes="16x16">
+<link rel="manifest" href="common/images/favicon/manifest.json?v={{version}}">
+<link rel="shortcut icon" href="common/images/favicon/favicon.ico?v={{version}}">
+<meta name="msapplication-TileColor" content="{{color}}">
+<meta name="msapplication-TileImage" content="common/images/favicon/mstile-144x144.png?v={{version}}">
+<meta name="msapplication-config" content="common/images/favicon/browserconfig.xml?v={{version}}">
+<meta name="theme-color" content="{{color}}">
+
+
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://css-tricks.com/" />
+<link rel="next" href="https://css-tricks.com/page/2/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS-Tricks" />
+<meta property="og:description" content="CSS-Tricks is a website about websites." />
+<meta property="og:url" content="https://css-tricks.com/" />
+<meta property="og:site_name" content="CSS-Tricks" />
+<meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2014/03/css-tricks-star.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Tips, Tricks, and Techniques on using Cascading Style Sheets." />
+<meta name="twitter:title" content="CSS-Tricks" />
+<meta name="twitter:site" content="@Real_CSS_Tricks" />
+<meta name="twitter:image" content="https://cdn.css-tricks.com/wp-content/uploads/2014/03/css-tricks-star.png" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/css-tricks.com\/","name":"CSS-Tricks","potentialAction":{"@type":"SearchAction","target":"https:\/\/css-tricks.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel='dns-prefetch' href='//v0.wordpress.com'>
+
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-TileImage" content="https://cdn.css-tricks.com/mstile-144x144.png">
+
+  <meta property="fb:pages" content="124436167285">
+<link href="//p.typekit.net" rel=dns-prefetch />

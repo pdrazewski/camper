@@ -1,0 +1,51 @@
+{% import "breadcrumb/static/breadcrumb.html" as breadcrumbSelect %}
+{{ breadcrumbSelect.breadcrumb(
+		itemsAsSelect = true,
+		data=[{
+			"title": "Sklep home",
+			"route": "#",
+			"subData": [{
+				"name": "Kategoria 123"
+			}, {
+				"name": "Kategoria 412"
+			}, {
+				"name": "Nazwa produktu lub strony"
+			}]
+		}, {
+			"title": "Kategoria 123",
+			"route": "#",
+			"subData": [{
+				"name": "Kategoria 123"
+			}, {
+				"name": "Kategoria 412"
+			}, {
+				"name": "Nazwa produktu lub strony"
+			}]
+		}, {
+			"title": "Kategoria 412",
+			"route": "#",
+			"subData": [{
+				"name": "Kategoria 123"
+			}, {
+				"name": "Kategoria 412"
+			}, {
+				"name": "Nazwa produktu lub strony"
+			}]
+		}, {
+			"title": "Nazwa produktu lub strony",
+			"route": "#",
+			"subData": [{
+				"name": "Kategoria 123"
+			}, {
+				"name": "Kategoria 412"
+			}, {
+				"name": "Nazwa produktu lub strony"
+			}]
+		}]
+	) 
+}}
+
+
+
+
+

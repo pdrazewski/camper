@@ -1,0 +1,58 @@
+{% macro footer(
+    data,
+    parent,
+    selector = {
+        class: "clearfix"
+    },
+    item = {
+        content: null,
+        position: "",
+        class: "",
+        passedData: {},
+        visible: false,
+        title:""
+    }
+) %}
+
+{% set itemMarkup %}
+    <div class="m-footer_box {{item.class}}">
+        <h3 class="m-footer_headline">{{item.title|safe}}</h3>
+        <div class="m-footer_content">
+            {{item.content|safe}}
+        </div>
+    </div>
+
+{% endset %}
+
+{% set listMarkup %}
+    <div class="m-footer_box {{data.selector.class}}">
+        <h3 class="m-footer_headline">{{data.title|safe}}</h3>
+        {% for item in data.items %}
+            {% if loop.first %}
+                <ul class="m-footer_content {% if not data.noJS %}js-footer_content{% endif %}">
+                    {% endif %}
+                    <li><a href="#">{{item.name|safe}}</a></li>
+                    {% if loop.last %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+        {{ data.content|safe }}
+    </div>
+{% endset %}
+
+<div class="m-footer {{selector.class}}">
+    {% for data in data %}
+        {% if item.content != null %}
+            {% if loop.index == item.position and item.visible == false %}
+                {{itemMarkup}}
+            {% endif %}
+            {{listMarkup}}
+            {% if loop.last and isVisible == false %}
+                {{itemMarkup}}
+            {% endif %}
+        {% else %}
+            {{listMarkup}}
+        {% endif %}
+    {% endfor %}
+</div>
+{% endmacro %}

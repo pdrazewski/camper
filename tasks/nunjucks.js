@@ -17,7 +17,13 @@ gulp.task('compile', function() {
 		manageEnv:function(env){
 			var dataPath = appname ? 'apps/'+appname+'/_src/config.json' : 'camper/_src/config.json'; 
         	var data = JSON.parse(fs.readFileSync(dataPath));
-        	env.addGlobal('camper', data);
+			var fakerPath = appname ? 'apps/'+appname+'/_src/data/faker.json' : 'camper/_src/data/faker.json';
+			var faker = JSON.parse(fs.readFileSync(fakerPath));
+			var contentfulPath = appname ? 'apps/'+appname+'/_src/data/contentful.json' : 'camper/_src/data/contentful.json';
+			var contentful = JSON.parse(fs.readFileSync(contentfulPath));
+        	env.addGlobal('faker', faker);
+			env.addGlobal('contentful', contentful);
+			env.addGlobal('camper', data);
     	}
 	}))
 	.pipe(gulp.dest(dest))

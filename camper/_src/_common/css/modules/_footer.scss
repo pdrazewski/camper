@@ -20,7 +20,6 @@
   }
   .m-footer_headline {
     font-size: 18px;
-    font-family: "Arial";
     font-weight: 700;
     padding: 20px;
     border-bottom: 1px solid $cl-greyA;
@@ -44,7 +43,6 @@
       right: 20px;
       top: 0;
       font-size: 48px;
-      font-family: "Arial";
       font-weight: 300;
       @include bp(tablet) {
         display: none;

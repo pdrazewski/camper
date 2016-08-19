@@ -34,7 +34,6 @@ react
 native
 jquery
 
-
 ### css
 // google fonts? - https://www.npmjs.com/package/gulp-google-webfonts
 // typekit?
@@ -44,23 +43,20 @@ jquery
 // scss-to-json
 // css uncss
 
-
 // # env
-// contentfull - sprawdzam
+// contentfull
 // errors nunjucks
-// menu dla stron
+// pages menu
 // docs
 // ui
 // minify html
-// page-speed?
+// page-speed
 
 // #js
 // js hint
-// react-babel builds - https://jonsuh.com/blog/integrating-react-with-gulp/
 // jasmine - https://syropia.net/journal/javascript-testing-with-jasmine-and-gulp-redux
 // uglify
 // show modules/blocks/pages/js bindings
-
 
 // #css
 // google fonts? - https://www.npmjs.com/package/gulp-google-webfonts
@@ -72,7 +68,6 @@ jquery
 // css uncss
 // gulp clean _dist from .scss files
 // changed .https://github.com/sindresorhus/gulp-changed
-
 
 
 
@@ -89,7 +84,7 @@ http://zeiran6.demo.towerthemes.com/index.php?route=common/home
 6. scss
 7. landing page development
 8. mail template development
-9. js testing via Jasmin and nichwatch with browserstack
+9. js testing via Jasmine and nichtwatch with browserstack
 10. gulp task runner
 11. babel es6 transpiler
 12. living styleguide

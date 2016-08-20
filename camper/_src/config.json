@@ -8,11 +8,11 @@
             "primary": {
                 "active": 1,
                 "order": 1,
-                "core": ["hmbg","wide"],
+                "core": ["wide"],
                 "wrapped": ["wrapped", "logo", "cartQuick", "search", "additionals"]
             },
             "secondary": {
-                "active": 0,
+                "active": 1,
                 "order": 1,
                 "core": [],
                 "wrapped": ["menu"]

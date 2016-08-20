@@ -1,4 +1,9 @@
 .b-header {
-  max-width: 1200px;
-  margin: 0 auto;
+  .b-header_wide {
+    background: #edeeee;
+  }
+  .b-header_wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }

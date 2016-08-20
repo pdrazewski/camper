@@ -3,14 +3,14 @@
  body {
 	font-size: 15px;
 	font-family: $font-primary; 
-	line-height: 22px; 
-	text-transform: uppercase;
+	line-height: 22px;
 	font-weight: 300;
 	a {
 		font-size: 15px;
 		text-decoration: none;
 	} 
 }
+@import "atoms/*.scss";
 @import "modules/**/*.scss";
 @import "blocks/*.scss";
 .b-mainContent {  

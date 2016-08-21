@@ -1,15 +1,29 @@
 modules
-1. slider (olw, slick, dangerous)
-1. content
-1. search
-1. menu
+first level:
+- slider (olw, slick, dangerous)
+- content
+- search
+- menu
+- footer
+- gallery
+- product
+
+second level:
+- filters
+- quick cart
+- cart list
+- flyer
+- map
+- lookbook
+
 
 atoms
-1. button
-1. form
-1. table
-1. tab
-1. widget
+first level:
+- button
+- form
+- table
+- tab
+- widget
 
 
 #campercss

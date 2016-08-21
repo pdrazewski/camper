@@ -1,58 +1,73 @@
 {% import "footer/static/footer.html" as footer %}
 
-{% set footerData = [
-{
-"title": "<span>Informacje</span>",
-"items": [{
-"name": "O firmie"
-}, {
-"name": "Regulamin"
-}, {
-"name": "Polityka prywatności"
-}, {
-"name": "Polityka cookie"
-}, {
-"name": "Pomoc"
-}]
-}, {
-"title": "<span>Obsługa klienta</span>",
-"items": [{
-"name": "Warunki dostawy"
-}, {
-"name": "Płatności"
-}, {
-"name": "Raty Alior"
-}, {
-"name": "FAQ"
-}, {
-"name": "Zgłoś błąd"
-}
-]
-}, {
-"title": "<span>Twoje konto</span>",
-"items": [{
-"name": "Zarejestruj się"
-}, {
-"name": "Zaloguj się"
-}, {
-"name": "Twoje zamwienia"
-}, {
-"name": "Ulubione"
-}, {
-"name": "Ustawienia konta"
-}
-]
-}]
+{% set data = [
+	{
+		"title": "<span>Information</span>",
+		"items": [
+			{
+			"name": "About Us"
+			}, {
+			"name": "Contact Us"
+			}, {
+			"name": "News"
+			}, {
+			"name": "Blog"
+			}, {
+			"name": "Privacy policy"
+			}
+		]
+	},
+	{
+		"title": "<span>Collections</span>",
+		"items": [
+			{
+			"name": "Living Room"
+			}, {
+			"name": "Bathroom"
+			}, {
+			"name": "Kitchen"
+			}, {
+			"name": "Bed Room"
+			}, {
+			"name": "Garden"
+			}
+		]
+	}, {
+		"title": "<span>Extras</span>",
+		"items": [
+			{
+			"name": "Brands"
+			}, {
+			"name": "Gift Vouchers"
+			}, {
+			"name": "Affiliates"
+			}, {
+			"name": "Specials"
+			}
+		]
+	}, {
+		"title": "<span>My account</span>",
+		"items": [
+			{
+			"name": "My Account"
+			}, {
+			"name": "Order History"
+			}, {
+			"name": "Wish List"
+			}, {
+			"name": "Newsletter"
+			}
+		]
+	}]
 %}
 
-
 {{ footer.footer(
-		data = footerData,
-		item = {
-			content: '<p>Infolinia: 32 445 70 27 <br> e-mail: <a href="#"> sklep@zadowolenie.pl </a> <br> poniedziałek - piątek 9:00 - 17: 00 <br> ul. Katowicka 146, Chorzow 41-500</p> <p class="m-footer_note">W centrali nie jest prowadzona sprzedaż detaliczna i hurtowa. Brak możliwości odbiorow osobistych</p> ',
-			"title": "<span>Kontakt</span>",
-			position: 4
-		})
+	data = data,
+	item = {
+		content: '<p>42 Puffin street 12345 Puffinville France <br> e-mail: <a href="#"> sales@yourcompany.com </a> <br> 0123-456-789</p>',
+		title: "Store information",
+		position: 5
+	})
 }}
 
 

@@ -9,7 +9,6 @@
         position: "",
         class: "",
         passedData: {},
-        visible: false,
         title:""
     }
 ) %}
@@ -48,14 +47,17 @@
 {% endmacro %}
 
 <div class="m-footer {{selector.class}}">
+    {% set visible = false %}
     {% for data in data %}
         {% if item.content != null %}
-            {% if loop.index == item.position and item.visible == false %}
-                {{footerItem(title=data.title, content=data.content)}}
+            {% if loop.index == item.position and visible == false %}
+                {{footerItem(title=item.title, content=item.content)}}
+                {% set visible = true %}
             {% endif %}
             {{footerList(title=data.title, content=data.content,items=data.items)}}
-            {% if loop.last and isVisible == false %}
-                {{footerItem(title=data.title, content=data.content)}}
+            {% if loop.last and visible == false %}
+                {{footerItem(title=item.title, content=item.content)}}
+                {% set visible = true %}
             {% endif %}
         {% else %}
             {{footerList(title=data.title, content=data.content,items=data.items)}}

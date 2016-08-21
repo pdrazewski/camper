@@ -1,55 +1,58 @@
 {% import "footer/static/footer.html" as footer %}
+
+{% set footerData = [
+{
+"title": "<span>Informacje</span>",
+"items": [{
+"name": "O firmie"
+}, {
+"name": "Regulamin"
+}, {
+"name": "Polityka prywatności"
+}, {
+"name": "Polityka cookie"
+}, {
+"name": "Pomoc"
+}]
+}, {
+"title": "<span>Obsługa klienta</span>",
+"items": [{
+"name": "Warunki dostawy"
+}, {
+"name": "Płatności"
+}, {
+"name": "Raty Alior"
+}, {
+"name": "FAQ"
+}, {
+"name": "Zgłoś błąd"
+}
+]
+}, {
+"title": "<span>Twoje konto</span>",
+"items": [{
+"name": "Zarejestruj się"
+}, {
+"name": "Zaloguj się"
+}, {
+"name": "Twoje zamwienia"
+}, {
+"name": "Ulubione"
+}, {
+"name": "Ustawienia konta"
+}
+]
+}]
+%}
+
+
 {{ footer.footer(
-		data=[{
-			"title": "<span>Zakupy</span>",
-			"items": [{
-				"name": "Twój koszyk"
-			}, {
-				"name": "Dostawa"
-			}, {
-				"name": "Zakupy na raty"
-			}, {
-				"name": "Śledzenie przesyki"
-			}, {
-				"name": "Serwis"
-			}, {
-				"name": "Zwroty/Reklamacje"
-			}]
-			}, {
-			"title": "<span>Twoje konto</span>",
-			"items": [{
-				"name": "Rejestracja"
-				}, {
-				"name": "Logowanie"
-				}, {
-				"name": "Edycja danych"
-				}, {
-				"name": "Ostatnio oglądane"
-				}]
-			}, {
-			"title": "<span>Informacje</span>",
-			"items": [{
-				"name": "Regulamin sklepu"
-				}, {
-				"name": "Zakupy na raty"
-				}, {
-				"name": "Praca/Kariera"
-				}, {
-				"name": "Polityka prywatności"
-				}]
-			}, {
-			"title": "<span>Dlaczego My</span>",
-			"items": [{
-				"name": "O firmie"
-				}, {
-				"name": "Karta sklepu"
-				}, {
-				"name": "Praca w sklepie"
-				}, {
-				"name": "Zaufane Opinie"
-				}]
-			}]
-		)
+		data = footerData,
+		item = {
+			content: '<p>Infolinia: 32 445 70 27 <br> e-mail: <a href="#"> sklep@zadowolenie.pl </a> <br> poniedziałek - piątek 9:00 - 17: 00 <br> ul. Katowicka 146, Chorzow 41-500</p> <p class="m-footer_note">W centrali nie jest prowadzona sprzedaż detaliczna i hurtowa. Brak możliwości odbiorow osobistych</p> ',
+			"title": "<span>Kontakt</span>",
+			position: 4
+		})
 }}
 
 

@@ -1,0 +1,71 @@
+{% macro menu(
+		data,
+		headline,
+		submenu = {
+			active: false,
+			data: ""
+		},
+		style = {
+			alignVertically: "",
+			verticalAlignColumns: "",
+			verticalAlignColumnName: ""
+		},
+		selector = {
+			class: "clearfix",
+			listClass: "",
+			profileId: "",
+			id: null,
+			verticalAlignColumnClass: ""
+		},
+		toggle = {
+			active: false,
+			attributes: "",
+			header: "",
+			icon: null
+		},
+		noJS = true,
+		extElement,
+		afterMenuZone
+	)
+%}
+
+
+	<nav class="m-menu {{selector.class}}" {% if selector.id != null %}id="{{selector.id}}"{% endif %}>
+		{% if toggle.active %}
+			<span class="m-menu_toggle" id="js-menu_toggle" {{ toggle.attributes|safe }}>
+				{{toggle.header|safe}}
+				{% if toggle.icon != null %}
+					<i class="{{toggle.icon}}"></i>
+				{% endif %}
+			</span>
+		{% endif %}
+		{{headline|safe}}
+		{% if toggle.active %}
+			<div id="{{selector.profileId}}" class="m-menu_wrapper">
+		{% endif %}
+			<ul class="m-menu_list clearfix2 {{selector.listClass}}">
+				{% for data in data %}
+
+					<li class="m-menu_item clearfix2 {{data.class}}{% if noJS == false %} js-menu_item {% endif %}"{% if data.attributes %} {{ data.attributes|safe }}{% endif %}>
+						{% if data.item %}
+
+								<a class="m-menu_link {{data.linkClass}}" href="{{data.url}}" {{data.linkAttr|safe}}>
+									{{data.item|safe}}
+									{{data.itemContent|safe}}
+								</a>
+
+						{% endif %}
+
+					</li>
+
+				{% endfor %}
+
+			</ul>
+
+		{% if toggle.active %}
+			</div>
+		{% endif %}
+		{{afterMenuZone|safe}}
+	</nav>
+
+{% endmacro %}

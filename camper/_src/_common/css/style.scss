@@ -13,8 +13,12 @@
 @import "atoms/*.scss";
 @import "modules/**/*.scss";
 @import "blocks/*.scss";
-.b-mainContent {  
-	max-width: 1200px; 
+.b-mainContent {
+	max-width: 1200px;
 	margin: 0 auto;
+	padding: 0 10px;
+	@include bp(desktop) {
+		padding: 0;
+	}
 }
 

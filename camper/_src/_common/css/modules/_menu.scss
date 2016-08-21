@@ -1,0 +1,33 @@
+.m-menu {
+  display: none;
+  margin-bottom: 15px;
+  border-top: 1px solid $cl-greyE;
+  border-bottom: 1px solid $cl-greyE;
+  @include bp(desktop_small) {
+    display: block;
+  }
+  .m-menu_list {
+    display: table;
+    width: 100%;
+    list-style: none;
+  }
+  .m-menu_item {
+    display: table-cell;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    &.is-active {
+      background-color: $cl-black;
+    }
+    &:hover {
+      background: $cl-greyD;
+    }
+  }
+  .m-menu_link {
+    display: block;
+    font-family: $font-primary;
+    font-size: 15px;
+    line-height: 45px;
+    color: $cl-grey3;
+    text-decoration: none;
+  }
+}

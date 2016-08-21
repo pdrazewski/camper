@@ -6,3 +6,5 @@ psd
 npm-debug.log
 .tmp/
 .idea
+**/bower_components/
+

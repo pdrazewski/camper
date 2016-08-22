@@ -21,4 +21,15 @@
 		padding: 0;
 	}
 }
-
+.b-sidebar {
+	@include bp(tablet_big) {
+		float: left;
+		width: 21%;
+	}
+}
+ .b-content {
+ 	@include bp(tablet_big) {
+ 		float: right;
+ 		width: 78%;
+ 	}
+ }

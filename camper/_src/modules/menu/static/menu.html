@@ -18,7 +18,7 @@
 			verticalAlignColumnClass: ""
 		},
 		toggle = {
-			active: true,
+			active: 0,
 			attributes: "",
 			header: "top menu toggle",
 			icon: null
@@ -29,12 +29,12 @@
 	)
 %}
 
-{% macro toggle(
+{% macro toggleMenu(
 	toggle
 	)
 %}
-
-{% if toggle.active %}
+{{toggle}}
+{% if toggle.active == 1 %}
 <span class="m-menu_toggle" id="js-menu_toggle" {{ toggle.attributes|safe }}>
 	{{toggle.header|safe}}
 	{% if toggle.icon != null %}
@@ -66,7 +66,7 @@
 
 
 	<nav class="m-menu {{selector.class}}" {% if selector.id != null %}id="{{selector.id}}"{% endif %}>
-		{{toggle(toggle=toggle)}}
+		{{toggleMenu(toggle=toggle)}}
 		{{headline|safe}}
 		{% if toggle.active %}
 			<div id="{{selector.profileId}}" class="m-menu_wrapper">

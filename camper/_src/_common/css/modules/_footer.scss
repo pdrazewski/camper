@@ -1,11 +1,7 @@
 .m-footer {
-	border: 1px solid $cl-greyA;
-	border-top: 0;
-	border-bottom: 0;
-	background: $cl-white;
 	box-sizing: border-box;
 	@include bp(tablet) {
-		border: none;
+		border-bottom: 1px solid $cl-greyD;
 	}
 	@include bp(tablet) {
 		margin: 0 auto;

@@ -1,4 +1,31 @@
 .b-footer {
-  max-width: 1200px;
-  margin: 0 auto;
+	background: $cl-greyE;
+	padding: 20px 0;
+	margin-top: 20px;
+	.b-footer_wrapper  {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
+.b-footer_copy {
+	padding: 10px;
+	@include bp(tablet) {
+		padding: 0 0 20px 0;
+		width: 70%;
+		margin-top: 20px;
+	}
+	.b-footer_socialItem {
+		border-radius: 50%;
+		font-size: 18px;
+		width: 35px;
+		height: 35px;
+		text-align: center;
+		line-height: 38px;
+		margin-right: 15px;
+		display: block;
+		float: left;
+		border: 1px solid $cl-greyD;
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
 }

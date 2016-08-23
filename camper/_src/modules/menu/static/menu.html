@@ -12,52 +12,62 @@
 	selectorId,
 	selectorVerticalAlignColumnClass,
 	toggleActive = 0,
-	toggleAttributes: "",
-	toggleHeader: "top menu toggle",
-	toggleIcon: null,
+	toggleAttributes = "",
+	toggleHeader = "top menu toggle",
+	toggleIcon = null,
 	noJS = true,
 	extElement,
-	afterMenuZone
-	)
+	afterMenuZone)
 %}
 
-{% macro toggleMenu(toggle)%}
-	{% if toggle.active == 1 %}
-		<span class="m-menu_toggle" id="js-menu_toggle" {{ toggle.attributes|safe }}>
-			{{toggle.header|safe}}
-			{% if toggle.icon != null %}
-				<i class="{{toggle.icon}}"></i>
+{% macro toggle(
+	active = toggleActive,
+	attributes = toggleAttributes,
+	header = toggleHeader,
+	icon = toggleIcon)
+%}
+	{% if active == 1 %}
+		<span class="m-menu_toggle" id="js-menu_toggle" {{ attributes|safe }}>
+			{{header|safe}}
+			{% if icon != null %}
+				<i class="{{icon}}"></i>
 			{% endif %}
 		</span>
 	{% endif %}
+
 {% endmacro %}
 
-{% macro item(data,noJS)%}
-	{% for data in data %}
-	<li class="m-menu_item clearfix2 {{data.class}}{% if noJS == false %} js-menu_item {% endif %}"{% if data.attributes %} 	{{ data.attributes|safe }}{% endif %}>
-		{% if data.item %}
-		<a class="m-menu_link {{data.linkClass}}" href="{{data.url}}" {{data.linkAttr|safe}}>
-			{{data.item|safe}}
-			{{data.itemContent|safe}}
-		</a>
+{% macro list(
+	data = data,
+	noJS = noJS,
+	listClass = selectorListClass )
+%}
+	<ul class="m-menu_list clearfix2 {{listClass}}">
+		{% for data in data %}
+		<li class="m-menu_item clearfix2 {{data.class}}{% if noJS == false %} js-menu_item {% endif %}"{% if data.attributes %} 	{{ data.attributes|safe }}{% endif %}>
+			{% if data.item %}
+			<a class="m-menu_link {{data.linkClass}}" href="{{data.url}}" {{data.linkAttr|safe}}>
+				{{data.item|safe}}
+				{{data.itemContent|safe}}
+			</a>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+
+{% endmacro %}
+
+	<nav class="m-menu {{selectorClass}}" {% if selectorId != null %}id="{{selectorId}}"{% endif %}>
+		{{toggle()}}
+		{{headline|safe}}
+		{% if toggleActive %}
+			<div id="{{selectorProfileId}}" class="m-menu_wrapper">
 		{% endif %}
-	</li>
-	{% endfor %}
-{% endmacro %}
-
-<nav class="m-menu {{selector.class}}" {% if selector.id != null %}id="{{selector.id}}"{% endif %}>
-	{{toggleMenu(toggle=toggle)}}
-	{{headline|safe}}
-	{% if toggle.active %}
-		<div id="{{selector.profileId}}" class="m-menu_wrapper">
-	{% endif %}
-		<ul class="m-menu_list clearfix2 {{selector.listClass}}">
-			{{item(data=data, noJS=noJS)}}
-		</ul>
-	{% if toggle.active %}
-		</div>
-	{% endif %}
-	{{afterMenuZone|safe}}
-</nav>
+			{{list()}}
+		{% if toggleActive %}
+			</div>
+		{% endif %}
+		{{afterMenuZone|safe}}
+	</nav>
 
 {% endmacro %}

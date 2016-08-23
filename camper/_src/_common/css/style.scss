@@ -3,10 +3,11 @@
  body {
 	font-size: 15px;
 	font-family: $font-primary; 
-	line-height: 22px;
+	line-height: 23px;
 	font-weight: 300;
 	a {
 		font-size: 15px;
+		color: $cl-blue23;
 		text-decoration: none;
 	} 
 }
@@ -17,6 +18,8 @@
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 10px;
+	clear: both;
+	overflow: hidden;
 	@include bp(desktop) {
 		padding: 0;
 	}
@@ -25,11 +28,13 @@
 	@include bp(tablet_big) {
 		float: left;
 		width: 21%;
+		padding-bottom: 20px;
 	}
 }
  .b-content {
  	@include bp(tablet_big) {
  		float: right;
- 		width: 78%;
+ 		width: 77%;
+		padding-bottom: 20px;
  	}
  }

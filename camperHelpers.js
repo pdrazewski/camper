@@ -47,13 +47,11 @@ module.exports = {
 		var entry;
 		if (this.app !== false) {
 			var appname = this.app
-		} 
+		}
+		input = ['camper/_src/modules/**/*.jsx','camper/_src/main.jsx'];
 	 	if (appname) {
-	 		input = ['apps/'+appname+'/_src/modules/**/*.jsx','apps/'+appname+'/_src/main.jsx'];
 	 		entry = 'apps/'+appname+'/_src/main.jsx';
-	 		
 	 	} else {
-	 		input = ['camper/_src/modules/**/*.jsx','camper/_src/main.jsx'];
 	 		entry = 'camper/_src/main.jsx';
 	 	}
 	 	return {

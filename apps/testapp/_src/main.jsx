@@ -1,4 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './_common/js/accordionInstance.jsx';
+import '../../../camper/_src/_common/js/accordionInstance.jsx';
   

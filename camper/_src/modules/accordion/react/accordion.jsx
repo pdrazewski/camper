@@ -7,7 +7,7 @@ export class CamperAccordion extends React.Component {
 		return (
 			<div className="m-accordion" id="js-m-accordion">
 				  {
-                    accordion.map(function (accordion, index) {
+                    accordion.map((accordion, index) => {
                     	var activeElement = index == 0 ? true : false;
                         return (
                         	<Item 

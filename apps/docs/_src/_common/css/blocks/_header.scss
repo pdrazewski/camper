@@ -1,0 +1,17 @@
+.b-header {
+	padding-top: 80px;
+	@include bp(tablet) {
+		padding-top: 0;
+	}
+	.b-header_wide {
+		background: #edeeee;
+		display: none;
+		@include bp(tablet) {
+			display: block;
+		}
+	}
+	.b-header_wrapper {
+		max-width: $globalWidth;
+		margin: 0 auto;
+	}
+}

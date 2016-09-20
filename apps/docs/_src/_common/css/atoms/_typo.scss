@@ -1,0 +1,48 @@
+.a-typo {
+	font: 400 12px/17px $font-primary;
+	color: $cl-black;
+	&.a-typo_primary {
+		font: 600 34px/40px $font-primary;
+		padding-bottom: 20px;
+	}
+	&.a-typo_secondary {
+		font: 400 20px/22px $font-primary;
+	}
+	&.a-typo_tertiary {
+		font: 400 13px/18px $font-primary;
+		padding-bottom: 10px;
+	}
+	&.a-typo_big {
+		font: 600 32px/36px $font-primary;
+	}
+	&.a-typo_small {
+		font: 400 13px/18px $font-primary;
+	}
+	&.a-typo_list {
+		padding: 10px 20px 20px 13px;
+		li {
+			padding: 2px 0;
+			font-family: $font-primary;
+			font-size: 13px;
+		}
+	}
+	&[disabled], &.disabled {
+		opacity: .60;
+		pointer-events: none;
+		cursor: default;
+	}
+}
+.b-header_wide {
+	.a-typo_list {
+		padding: 0;
+		float: right;
+		list-style: none;
+		li {
+			float: left;
+			padding: 10px 0 10px 15px;
+			a {
+				font-size: 13px;
+			}
+		}
+	}
+}

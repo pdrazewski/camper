@@ -1,0 +1,112 @@
+.m-footer {
+	box-sizing: border-box;
+	@include bp(tablet) {
+		border-bottom: 1px solid $cl-greyD;
+	}
+	@include bp(tablet) {
+		margin: 0 auto;
+		padding: 20px 0 30px;
+	}
+	.m-footer_box {
+		@include bp(tablet) {
+			float: left;
+			width: 19%;
+			padding-right: 1%;
+		}
+	}
+	.m-footer_headline {
+		font-size: 18px;
+		font-weight: 700;
+		padding: 20px;
+		border-bottom: 1px solid $cl-greyA;
+		cursor: pointer;
+		position: relative;
+		@include bp(tablet) {
+			margin-bottom: 15px;
+			padding: 0;
+			border-bottom: 0;
+			cursor: default;
+			font-size: 19px;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+		span {
+			z-index: 2;
+			position: relative;
+		}
+		&:after {
+			content: "+";
+			position: absolute;
+			right: 20px;
+			top: 0;
+			font-size: 48px;
+			font-weight: 300;
+			@include bp(tablet) {
+				display: none;
+			}
+		}
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: $cl-greyA;
+			z-index: 0;
+			bottom: 0;
+			content: "";
+			width: 0;
+			@include bp(tablet) {
+				display: none;
+			}
+		}
+		&:hover {
+			&:before {
+				width: 100%;
+			}
+		}
+		&.active {
+			&:after {
+				content: "-";
+				right: 25px;
+				top: -10px;
+				font-size: 54px;
+			}
+		}
+	}
+	.m-footer_content {
+		display: none;
+		margin-top: 5px;
+		@include bp(tablet) {
+			display: block;
+			margin: 0;
+		}
+		p {
+			line-height: 21px;
+			padding: 8px 20px;
+			@include bp(tablet) {
+				padding: 0;
+			}
+		}
+		li {
+			list-style: none;
+			@include bp(tablet) {
+				padding-bottom: 5px;
+			}
+			a {
+				display: block;
+				padding: 8px 20px;
+				line-height: 21px;
+				font-size: 14px;
+				border-bottom: 1px solid $cl-greyA;
+				text-decoration: none;
+				@include bp(tablet) {
+					display: inline;
+					padding: 0;
+					border: 0;
+				}
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

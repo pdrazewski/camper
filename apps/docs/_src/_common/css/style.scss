@@ -1,0 +1,44 @@
+ @import "_vars/*.scss";
+ @import "_defaults/_normalize.scss"; 
+ @import "_defaults/_mixins.scss";
+ body {
+	font-size: 15px;
+	font-family: $font-primary; 
+	line-height: 23px;
+	font-weight: 300;
+	a {
+		font-size: 15px;
+		color: $cl-blue23;  
+		text-decoration: none;
+	} 
+}
+@import "atoms/*.scss";
+@import "modules/**/*.scss";
+@import "blocks/*.scss";
+.b-mainContent {
+	max-width: $globalWidth;
+	margin: 0 auto;
+	padding: 0 10px;
+	clear: both; 
+	overflow: hidden;
+	@include bp(desktop) {
+		padding: 0;
+	}
+}
+.b-sidebar {
+	@include bp(phone_big) {
+			display: inline;
+		}
+	@include bp(tablet) {
+		float: left;
+		width: 21%;
+		padding-bottom: 20px; 
+	}
+}
+ .b-content {
+ 	@include bp(tablet) {
+ 		float: right;
+ 		width: 77%;
+		padding-bottom: 20px;
+ 	}
+ }

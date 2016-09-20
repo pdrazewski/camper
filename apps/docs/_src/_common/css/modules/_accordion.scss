@@ -1,0 +1,33 @@
+.m-accordion {
+	.m-accordion_item {
+		border-bottom: 1px solid $cl-greyE;
+		&.active,
+		&.is-active {
+			.m-accordion_content {
+				display: block;
+			}
+			.m-accordion_headline {
+				margin-bottom: 10px;
+				&:after {
+					content: "-";
+				}
+			} 
+		}
+	}
+	.m-accordion_headline {
+		position: relative;
+		padding: 15px 0;
+		font-size: 16px;
+		cursor: pointer;
+		&:after {
+			position: absolute;
+			top: 15px;
+			right: 10px;
+			content: "+";
+		}
+	}
+	.m-accordion_content {
+		display: none;
+		padding: 15px 0;
+	}
+}

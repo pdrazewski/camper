@@ -1,0 +1,32 @@
+{
+    "core": {
+        "title": "CamperCSS documentation",
+        "link": "/",
+        "header": {
+            "attr": "",
+            "order": 1,
+            "primary": {
+                "active": 1,
+                "order": 1,
+                "core": ["wide"],
+                "wrapped": ["wrapped", "logo", "cartQuick", "search", "additionals"]
+            },
+            "secondary": {
+                "active": 1,
+                "order": 1,
+                "core": [],
+                "wrapped": []
+            }
+        },
+        "footer": {
+            "outsideWrapper": 0,
+            "wrapperClass": " ",
+            "attr": "",
+            "active": 0,
+            "order": 1,
+            "core": [],
+            "wrapped": ["footer", "copyrights", "bottom"],
+            "afterFooter": []
+        }
+    }
+}

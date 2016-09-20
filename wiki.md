@@ -42,12 +42,14 @@ camper (core App)
 
 ### prefixes:
 
+```
 p - for pages (parent selector)
 b - for main structure blocks
 js- for js binding
 m - for modules
 a - for generic atoms
 is - for states
+```
 
 ## Directories
 ## Gulp 

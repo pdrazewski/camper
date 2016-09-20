@@ -15,6 +15,17 @@ camper (core App)
     - modules
     - pages
     - templates
+      - _common
+        - header
+        - footer
+        meta.html
+        scripts.html
+      - cart
+      - cms
+      - index
+      - product
+      - ui
+      - user
     config.json
     main.jsx
   - _dist

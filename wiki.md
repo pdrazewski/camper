@@ -13,6 +13,10 @@ camper (core App)
     - _common (assets: css, js, fonts, images) 
     - data (json files with data - faker, contentfull)
     - modules
+      - XXX-module
+        - _instances
+        - react
+        - static
     - pages
     - templates
       - _common

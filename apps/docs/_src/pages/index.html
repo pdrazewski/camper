@@ -8,7 +8,53 @@
 	{% include "menu/_instances/docs/cms-sidebar.html" %}
 </div> 
 <div class="b-content"> 
-	<h1 class="a-typo a-typo_primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, et.</h1>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque est et nostrum voluptate. Aspernatur atque autem cum error, iusto libero necessitatibus nostrum quos saepe sapiente sint totam voluptates. Aliquam architecto cupiditate eius et eum harum labore minima, molestiae perferendis quisquam repellat sequi tenetur vero! Commodi deserunt dignissimos, facilis fugiat harum itaque labore laboriosam libero maiores non, optio pariatur placeat repudiandae saepe sequi sint suscipit tempora veritatis voluptate voluptatum. Aperiam, ex fugit harum id ipsam labore necessitatibus placeat temporibus ut voluptatem. Amet aperiam asperiores at deleniti deserunt dolorem harum, ipsam laboriosam libero nam perferendis placeat quasi recusandae. Ab asperiores nisi possimus.
+	<h1 class="a-typo a-typo_primary">The Big Picture</h1> 
+	Camper - fork ENP Atoms, framework frontowy, którego idea opiera się na: atomic design, itcss, sematic ui, rizzo, origami, lightning design system. Głównym założenie frameworka opiera się na reużywalnych modułach które umożliwiają skalowalność systemów zbudowanych w oparciu o Camper. Ponad 50 projektów wdrożonych na camper (nda).
+	CSS/HTML - opiera się na bem i smacs jednak nie korzysta z modfikatorów.
+
+	ENP Atoms to framework CSS/HTML/Twig/JS oparty na metodologii [Atomic Design.](http://atomicdesign.bradfrost.com/table-of-contents/) Znajdziemy w nim elementy charakterystyczne dla [smacss](https://smacss.com/) (m.in. zasady budowania modulow oraz nazewnictwa stanow). Konwencja nazewnictwa klass CSS powstała pod duzym wpływem [BEM](https://css-tricks.com/bem-101/).
+Ideologia budowania skalowalnych, elastycznych i łatwych w utrzymanie aplikacji ktora nam przyświeca, pokrywa się w wielu miejscach z podejściem prezentowanym przez [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/).
+Metodologie te, zostały zaadoptowana do naszych potrzeb, czego efektem są podstawowe zasady na ktorych bazuje ENP Atoms:
+<ul>
+
+<li>*   głównym budulcem aplikacji sa reużywalne moduły</li>
+<li>*   każdy z modułow dostarcza jedna specyficzna funkcjonalnosc</li>
+<li>*   każdy z modułów jest opracowany z uwzględnieniem działania na urzadzeniach dotykowych oraz w każdej rozdzielczości ekranu</li>
+<li>*   modul moze byc wykorzystany wiele razy w systemie i w zaleznosci od kontekstu roznic sie wygladem oraz zaawansowaniem dostarczanej funkcjonalnosci</li>
+<li>*   moduly implementowane sa w danych widokach za pomoca loaderów, w ktorych przekazywane sa parametry oraz dane modułu. Dopuszczalne jest również implementowanie modułu bez pomocy loadera - jednak jedynie wtedy gdy dany moduł przyjmuje tylko parametry - bez danych.</li>
+<li>*   struktura danego widoku budowana jest za pomoca blokow, w ktorych umieszczane sa loadery modułów lub same moduły (patrz wyżej)</li>
+<li>*   elementami dodatkowymi używanymi do budowania systemu sa: macra i formularze</li>
+<li>*   moduły - mimo że przygotowane w sposob uniwersalny - wykorzystywane sa w glownie w 4 obszarach: obszar koszyka oraz konta klienta, obszar produktu, obszar cms, oraz obszar globalny. Dla ulatwienia moduly te - w swoich nazwach - maja zaszyte jako pierwszy człon - nazwe obszaru dla ktorego danym modul zostal domyslnie przygotowany. Brak przedrostka wskazuje na globalne wykorzystanie danego modulu.</li>
+
+</ul>
+
+<h1 class="a-typo a-typo_primary g-pt10">Views</h1>
+Camper - fork ENP Atoms, framework frontowy, którego idea opiera się na: atomic design, itcss, sematic ui, rizzo, origami, lightning design system. Głównym założenie frameworka opiera się na reużywalnych modułach które umożliwiają skalowalność systemów zbudowanych w oparciu o Camper. Ponad 50 projektów wdrożonych na camper (nda).
+
+
+<h1 class="a-typo a-typo_primary g-pt10">Structure</h1>
+Camper - fork ENP Atoms, framework frontowy, którego idea opiera się na: atomic design, itcss, sematic ui, rizzo, origami, lightning design system. Głównym założenie frameworka opiera się na reużywalnych modułach które umożliwiają skalowalność systemów zbudowanych w oparciu o Camper. Ponad 50 projektów wdrożonych na camper (nda).
+
+<h1 class="a-typo a-typo_primary g-pt10">Setup</h1>
+Camper - fork ENP Atoms, framework frontowy, którego idea opiera się na: atomic design, itcss, sematic ui, rizzo, origami, lightning design system. Głównym założenie frameworka opiera się na reużywalnych modułach które umożliwiają skalowalność systemów zbudowanych w oparciu o Camper. Ponad 50 projektów wdrożonych na camper (nda).
+
+<h1 class="a-typo a-typo_primary g-pt10">CSS / HTML - Nadpisywanie / dziedziczenie plików</h1>
+Nunjacks
+
+## <a name="prefixes"></a> Prefixy
+
+* `.b-...` prefix dla blokow
+* `.m-...` prefix dla modułow
+* `.is-...` odpowiada za stan, np. *is-active*, *is-first*
+* `.js-...` służy do popinania akcji *javascript*
+* `.g-...` klasy globalne, deklaracje znajduja się w pliku `common/css/custom/_base2.0.scss` np. *g-mb0*
+
+
+<h1 class="a-typo a-typo_primary g-pt10">JS</h1>
+Camper - fork ENP Atoms, framework frontowy, którego idea opiera się na: atomic design, itcss, sematic ui, rizzo, origami, lightning design system. Głównym założenie frameworka opiera się na reużywalnych modułach które umożliwiają skalowalność systemów zbudowanych w oparciu o Camper. Ponad 50 projektów wdrożonych na camper (nda).
+
+<h1 class="a-typo a-typo_primary g-pt10">Apps</h1>
+Camper - fork ENP Atoms, framework frontowy, którego idea opiera się na: atomic design, itcss, sematic ui, rizzo, origami, lightning design system. Głównym założenie frameworka opiera się na reużywalnych modułach które umożliwiają skalowalność systemów zbudowanych w oparciu o Camper. Ponad 50 projektów wdrożonych na camper (nda).
+
 </div>
 {% endblock %}  

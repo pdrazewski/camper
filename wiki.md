@@ -36,6 +36,15 @@ camper (core App)
 
 ```
 
+
+
+## Compilaton process
+
+Nunjacks =>
+SCSS =>
+React =>
+ES6 =>
+
 ## Views
 ## JS
 ## CSS
